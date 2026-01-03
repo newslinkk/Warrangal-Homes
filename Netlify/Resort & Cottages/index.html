@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- SEO Optimization for Resort Cottages Page -->
+    <title>Luxury Resort Cottages for Stay | Go-Ranch Weekend Getaway near Yadadri</title>
+    <meta name="description" content="Book your stay in the comfortable and private resort cottages at Go-Ranch Resorts. The perfect luxury accommodation for plot owners and families enjoying the 450+ acre mega-project near Yadadri.">
+    <meta name="keywords" content="resort cottages near Yadadri, weekend stay near Aler, luxury farm stay, Go-Ranch accommodation, resort rooms and cottages, staycation options">
+    
+    <!-- Custom Tailwind Configuration (Matching Home Page Theme) -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'ranch-primary': '#004d40', // Deep Forest Green/Teal
+                        'ranch-accent': '#FFC107',  // Gold/Amber
+                        'ranch-light': '#E0F2F1',
+                        'ranch-dark': '#00251A',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans bg-gray-50 text-ranch-dark">
+
+      <!-- HEADER & NAVIGATION -->
+    <header id="main-header" class="fixed top-0 left-0 w-full z-50 bg-ranch-dark py-4 text-white shadow-lg">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+            <div class="flex items-center gap-2 group cursor-pointer">
+                <div class="w-10 h-10 bg-ranch-accent rounded-lg flex items-center justify-center rotate-3 group-hover:rotate-0 transition-transform duration-300">
+                    <i data-lucide="tree-pine" class="text-ranch-dark w-6 h-6"></i>
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-xl font-black tracking-tighter leading-none text-white group-hover:text-ranch-accent transition-colors">GO-RANCH</span>
+                    <span class="text-[10px] uppercase tracking-widest text-ranch-accent font-bold">Resorts & Estates</span>
+                </div>
+            </div>
+            
+            <div class="hidden lg:flex items-center gap-6 text-sm font-semibold">
+                <a href="#" class="nav-link">Home</a>
+                <div class="relative dropdown-group">
+                    <button class="nav-link flex items-center gap-1">
+                    <a href="Plot & Pricing" class="nav-link">Plots & Pricing</a><i data-lucide="chevron-down" class="w-4 h-4 opacity-50"></i>
+                    </button>
+                    <div class="dropdown-menu absolute top-full left-0 mt-2 w-48 bg-white text-ranch-dark shadow-2xl rounded-xl overflow-hidden border border-gray-100">
+                        <a href="https://drive.google.com/file/d/1egb9KKyDC_KutAKTaDA79ABvLZPkRoz0/view" target="_blank" class="flex items-center gap-3 px-4 py-3 hover:bg-ranch-light transition border-b border-gray-50">
+                            <i data-lucide="map" class="w-4 h-4 text-ranch-primary"></i> View Pricing
+                        </a>
+                    </div>
+                </div>
+                <a href="Sandalwood Plantation" class="nav-link">Sandalwood Plantation</a>
+                <a href="Resort & Cottages" class="nav-link">Resort & Cottages</a>
+                <a href="Ask AI" class="nav-link">Ask AI</a>
+                <a href="FAQ's" class="nav-link">FAQ's</a>
+                <a href="Customer Support App" class="nav-link">Customer Support App</a>
+                <a href="Other Projects" class="nav-link">Other Projects</a>
+                <a href="Contact Sales" class="nav-link">Contact Sales</a>
+                <div class="flex items-center gap-3 ml-4">
+                    <a href="Book Site Visit" class="px-5 py-2 border border-ranch-accent text-ranch-accent rounded-full font-bold hover:bg-ranch-accent hover:text-ranch-dark transition-all shadow-sm">Book Site Visit</a>
+                    </div>
+            </div>
+
+            <button class="lg:hidden text-white" id="mobile-menu-btn">
+                <i data-lucide="menu" class="w-8 h-8"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Added line spaces as requested -->
+    <div class="h-6"></div>
+    <div class="h-6"></div>
+    <div class="h-6"></div>
+    
+    <!-- HERO/HEADER SECTION - Cottages Focus -->
+    <section class="bg-ranch-primary py-16 sm:py-20 text-center text-white">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl sm:text-5xl font-extrabold text-ranch-accent mb-3">Your Home Away From Home: Resort Cottages</h1>
+            <p class="text-xl text-ranch-light max-w-4xl mx-auto">Extend your stay and relax in our fully furnished, comfortable cottages nestled within the tranquility of the 450+ acre mega-project.</p>
+        </div>
+    </section>
+
+    <!-- 1. COTTAGE EXPERIENCE & FEATURES -->
+    <section class="py-16 sm:py-24 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+            <h2 class="text-3xl font-bold text-center mb-12 text-ranch-dark">Stay in Comfort, Surrounded by Nature </h2>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <!-- Text Content -->
+                <div class="space-y-6">
+                    <p class="text-lg text-gray-700">Whether you're visiting your sandalwood plot, enjoying the adventure activities, or simply seeking a peaceful weekend escape from the city, our resort cottages offer the perfect base.</p>
+                    <p class="text-lg text-gray-700 font-semibold text-ranch-primary">Designed for maximum relaxation, each cottage provides privacy, modern amenities, and easy access to the central resort facilities like the Beach Pool and Conference Hall.</p>
+                    
+                    <ul class="space-y-3 list-none p-0">
+                        <li class="flex items-center text-ranch-dark"><i data-lucide="bed" class="w-5 h-5 mr-3 text-ranch-accent flex-shrink-0"></i> Comfortable, well-appointed bedrooms</li>
+                        <li class="flex items-center text-ranch-dark"><i data-lucide="snowflake" class="w-5 h-5 mr-3 text-ranch-accent flex-shrink-0"></i> Fully air-conditioned rooms</li>
+                        <li class="flex items-center text-ranch-dark"><i data-lucide="shower-head" class="w-5 h-5 mr-3 text-ranch-accent flex-shrink-0"></i> Modern attached washrooms</li>
+                        <li class="flex items-center text-ranch-dark"><i data-lucide="door-open" class="w-5 h-5 mr-3 text-ranch-accent flex-shrink-0"></i> Private veranda or sit-out area</li>
+                    </ul>
+                </div>
+                
+                <!-- Image Placeholder -->
+                <div class="bg-ranch-light p-6 rounded-xl shadow-2xl overflow-hidden">
+                    <img src="https://fusion.goranchresort.com//assets/images/gallery/tulip-single-bedroom-cottages-goranch-resort9.jpg" class="w-full h-auto object-cover rounded-lg">
+                    <p class="p-4 text-center text-sm text-gray-500">The serene and rustic exterior of the Go-Ranch Cottages.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 2. AMENITY INTEGRATION -->
+    <section class="py-16 bg-ranch-light">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl text-center">
+             <h2 class="text-3xl font-bold mb-4 text-ranch-primary">A Seamless Resort Experience</h2>
+             <p class="text-lg text-gray-700 max-w-3xl mx-auto mb-10">Staying in our cottages means you're only steps away from all the premium amenities included with your resort membership.</p>
+            
+            <div class="grid sm:grid-cols-3 gap-6">
+                
+                <!-- Integration 1: Food -->
+                <div class="p-6 bg-white rounded-xl shadow-lg border-b-4 border-ranch-accent">
+                    <i data-lucide="utensils" class="w-8 h-8 mx-auto mb-3 text-ranch-primary"></i>
+                    <h3 class="text-xl font-semibold mb-2">Dining Convenience</h3>
+                    <p class="text-gray-600 text-sm">Delicious meals served at a nominal cost, eliminating the need to pack and carry food.</p>
+                </div>
+                
+                <!-- Integration 2: Activities -->
+                <div class="p-6 bg-white rounded-xl shadow-lg border-b-4 border-ranch-accent">
+                    <i data-lucide="activity" class="w-8 h-8 mx-auto mb-3 text-ranch-primary"></i>
+                    <h3 class="text-xl font-semibold mb-2">Instant Access to Fun</h3>
+                    <p class="text-gray-600 text-sm">Wake up and immediately access the Beach Pool, Mini Golf, Zipline, and other 15+ activities.</p>
+                </div>
+
+                <!-- Integration 3: Security -->
+                <div class="p-6 bg-white rounded-xl shadow-lg border-b-4 border-ranch-accent">
+                    <i data-lucide="lock" class="w-8 h-8 mx-auto mb-3 text-ranch-primary"></i>
+                    <h3 class="text-xl font-semibold mb-2">Complete Security</h3>
+                    <p class="text-gray-600 text-sm">Enjoy your stay with peace of mind knowing the entire project is monitored 24/7 by dedicated security personnel.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. VIDEO SHOWCASE -->
+    <section class="py-16 sm:py-24 bg-ranch-primary text-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-4xl">
+            <h2 class="text-3xl font-bold mb-6 text-ranch-accent">Take a Video Tour of Our Cottages</h2>
+            <p class="text-lg text-ranch-light mb-8">Get a sneak peek inside the interiors and see the natural surroundings that will define your perfect weekend.</p>
+            
+            <!-- Video Showcase Embed (UPDATED FOR YOUTUBE) -->
+            <div class="bg-gray-200 rounded-xl shadow-2xl overflow-hidden p-4">
+                <div class="aspect-video rounded-lg overflow-hidden border-4 border-ranch-accent">
+                    <iframe 
+                        class="w-full h-full"
+                        src="https://www.youtube.com/embed/PwwBLLbLclY" 
+                        title="Go-Ranch Cottage Video Tour" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <p class="p-4 text-center text-sm text-gray-700">Walkthrough video of a typical resort cottage unit.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 4. 20+ ACTIVITIES SECTION -->
+    <section class="py-16 sm:py-24 bg-ranch-light">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-ranch-primary mb-4">Over 20 Activities: Included with Your Free Membership</h2>
+            <p class="text-lg text-gray-700 max-w-4xl mx-auto mb-12">Every time you visit, enjoy a wide range of indoor and outdoor sports, relaxation, and adventure included with your plot ownership.</p>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                
+                <div class="p-4 bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300">
+                    <i data-lucide="umbrella" class="w-8 h-8 mx-auto mb-3 text-ranch-accent"></i>
+                    <h3 class="font-bold text-ranch-dark text-lg">Beach Swimming Pool</h3>
+                    <p class="text-gray-600 text-sm">Large, beautifully designed pool area.</p>
+                </div>
+                
+                <div class="p-4 bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300">
+                    <i data-lucide="flag" class="w-8 h-8 mx-auto mb-3 text-ranch-accent"></i>
+                    <h3 class="font-bold text-ranch-dark text-lg">Miniature Golf</h3>
+                    <p class="text-gray-600 text-sm">Fun and challenging miniature golf course.</p>
+                </div>
+                
+                <div class="p-4 bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300">
+                    <i data-lucide="maximize" class="w-8 h-8 mx-auto mb-3 text-ranch-accent"></i>
+                    <h3 class="font-bold text-ranch-dark text-lg">Multi-Sport Courts</h3>
+                    <p class="text-gray-600 text-sm">Courts for Basketball, Pickleball, and Badminton.</p>
+                </div>
+                
+                <div class="p-4 bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300">
+                    <i data-lucide="bike" class="w-8 h-8 mx-auto mb-3 text-ranch-accent"></i>
+                    <h3 class="font-bold text-ranch-dark text-lg">Cycling Tracks</h3>
+                    <p class="text-gray-600 text-sm">Explore the scenic farm roads on a bike.</p>
+                </div>
+                
+                <div class="p-4 bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300">
+                    <i data-lucide="zap" class="w-8 h-8 mx-auto mb-3 text-ranch-accent"></i>
+                    <h3 class="font-bold text-ranch-dark text-lg">Zipline & Adventure</h3>
+                    <p class="text-gray-600 text-sm">Thrill-seeking zip line and low-rope course.</p>
+                </div>
+                
+                <div class="p-4 bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300">
+                    <i data-lucide="box-select" class="w-8 h-8 mx-auto mb-3 text-ranch-accent"></i>
+                    <h3 class="font-bold text-ranch-dark text-lg">Box Cricket Nets</h3>
+                    <p class="text-gray-600 text-sm">Practice your batting and bowling safely.</p>
+                </div>
+                
+                <div class="p-4 bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300">
+                    <i data-lucide="volleyball" class="w-8 h-8 mx-auto mb-3 text-ranch-accent"></i>
+                    <h3 class="font-bold text-ranch-dark text-lg">Sand Volleyball</h3>
+                    <p class="text-gray-600 text-sm">Classic beach game fun on the sand court.</p>
+                </div>
+                
+                <div class="p-4 bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300">
+                    <i data-lucide="cloud-rain" class="w-8 h-8 mx-auto mb-3 text-ranch-accent"></i>
+                    <h3 class="font-bold text-ranch-dark text-lg">Rain Dance</h3>
+                    <p class="text-gray-600 text-sm">Enjoy a fun-filled session under the sprinklers.</p>
+                </div>
+                
+                <div class="p-4 bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300">
+                    <i data-lucide="flame" class="w-8 h-8 mx-auto mb-3 text-ranch-accent"></i>
+                    <h3 class="font-bold text-ranch-dark text-lg">Bonfire Nights</h3>
+                    <p class="text-gray-600 text-sm">Relaxing evenings around the community bonfire.</p>
+                </div>
+                
+                <div class="p-4 bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300">
+                    <i data-lucide="toy-brick" class="w-8 h-8 mx-auto mb-3 text-ranch-accent"></i>
+                    <h3 class="font-bold text-ranch-dark text-lg">Kids Play Area</h3>
+                    <p class="text-gray-600 text-sm">Safe and engaging space for children to play.</p>
+                </div>
+                
+                <div class="p-4 bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300">
+                    <i data-lucide="gamepad" class="w-8 h-8 mx-auto mb-3 text-ranch-accent"></i>
+                    <h3 class="font-bold text-ranch-dark text-lg">Indoor Games</h3>
+                    <p class="text-gray-600 text-sm">Chess, Carrom, and Table Tennis in the clubhouse.</p>
+                </div>
+
+                <div class="p-4 bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300">
+                    <i data-lucide="route" class="w-8 h-8 mx-auto mb-3 text-ranch-accent"></i>
+                    <h3 class="font-bold text-ranch-dark text-lg">Jogging Trails</h3>
+                    <p class="text-gray-600 text-sm">Dedicated pathways through the scenic plantation.</p>
+                </div>
+
+                <div class="p-4 bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300">
+                    <i data-lucide="projector" class="w-8 h-8 mx-auto mb-3 text-ranch-accent"></i>
+                    <h3 class="font-bold text-ranch-dark text-lg">Open Air Cinema</h3>
+                    <p class="text-gray-600 text-sm">Movie nights under the stars at the outdoor theatre.</p>
+                </div>
+
+                <div class="p-4 bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300">
+                    <i data-lucide="briefcase" class="w-8 h-8 mx-auto mb-3 text-ranch-accent"></i>
+                    <h3 class="font-bold text-ranch-dark text-lg">Conference Hall</h3>
+                    <p class="text-gray-600 text-sm">Facility for meetings or private gatherings.</p>
+                </div>
+
+                <div class="p-4 bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300">
+                    <i data-lucide="sun" class="w-8 h-8 mx-auto mb-3 text-ranch-accent"></i>
+                    <h3 class="font-bold text-ranch-dark text-lg">Relaxation Rooms</h3>
+                    <p class="text-gray-600 text-sm">Rooms for rest, lockers, and shower facilities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. FINAL CTA / CONTACT LINK -->
+    <section class="py-16 bg-white text-center">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-ranch-dark mb-4">Plan Your Visit: See Your Plot, Stay in Comfort.</h2>
+            <p class="text-lg text-gray-700 mb-8 max-w-3xl mx-auto">
+                Schedule a site visit to view the DTCP plots and experience the cottage amenities firsthand.
+            </p>
+            <a href="contact.html" class="inline-flex items-center px-10 py-4 bg-ranch-accent text-ranch-dark text-xl font-bold rounded-full shadow-2xl hover:bg-yellow-400 transition duration-300 transform hover:scale-105">
+                Book a Visit to Explore Plots & Resort <i data-lucide="map-pin" class="w-5 h-5 ml-3"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-ranch-dark text-white py-10">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="mb-4">
+                <a href="https://www.warrangal-highway.homes/terms-conditions" class="mx-3 hover:text-ranch-accent transition duration-200">Terms & Conditions</a> | 
+                <a href="https://www.warrangal-highway.homes/privacy-policy" class="mx-3 hover:text-ranch-accent transition duration-200">Privacy Policy</a> |
+                <a href="https://www.warrangal-highway.homes/disclaimer" class="mx-3 hover:text-ranch-accent transition duration-200">Disclaimer</a>
+            </div>
+            <p class="text-sm mb-2">&copy; 2025 Go-Ranch Resorts | A Project by USM Infra.</p>
+            <p class="text-sm font-semibold text-ranch-accent">DTCP Approved Layout: T.L.P.NO. 58/2025/W</p>
+            <p class="text-sm font-semibold text-ranch-accent">RERA Registration Number: P00600001873</p>
+        </div>
+    </footer>
+    
+    <!-- Render Lucide icons -->
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

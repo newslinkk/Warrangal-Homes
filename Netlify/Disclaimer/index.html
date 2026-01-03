@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Go-Ranch Interactive Website Disclaimer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'ranch-primary': '#004d40',
+                        'ranch-accent': '#FFC107',
+                        'ranch-light': '#E0F2F1',
+                        'ranch-dark': '#00251A',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Chosen Palette: Go-Ranch Corporate (Deep Green, Gold Accent, Light Teal) -->
+    <!-- Application Structure Plan: The original .md file is a dense, single-column legal text. This SPA re-architects it into a vertical tabbed interface, consistent with the other legal documents. A persistent sidebar navigation allows users to click a topic (e.g., "Investment Disclaimer"), and the main content panel dynamically updates via JS to show only that section's text. This component-based structure makes the disclaimer scannable and "explorable" rather than intimidating. -->
+    <!-- Visualization & Content Choices: Report Info (Section 2: Investment Disclaimer) -> Goal(Warn/Disclose) -> Presentation(A visually distinct `div` with a yellow background `bg-yellow-50` and a warning icon `&#9888;`) -> Interaction(Appears when "Investment Disclaimer" tab is clicked) -> Justification(This is the most critical section of the document. Elevating it from "fine print" to a clear, unmissable warning box is the most effective way to "translate" its true purpose to the user). All other sections are mapped 1:1 to their own content panel, activated by the sidebar. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        .nav-button {
+            transition: all 0.2s ease-in-out;
+        }
+        .nav-button.active {
+            background-color: #004d40;
+            color: white;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        .nav-button:not(.active):hover {
+            background-color: #E0F2F1;
+        }
+    </style>
+</head>
+<body class="font-sans bg-slate-50 text-slate-800">
+
+    <div class="container mx-auto max-w-6xl p-4 sm:p-8">
+        
+        <div class0="mb-6">
+            <h1 class="text-3xl font-bold text-ranch-primary">Interactive Website Disclaimer</h1>
+            <p class="text-lg text-slate-600">Go Ranch Resort Sandalwood Plots</p>
+        </div>
+
+        <div class="mt-6 flex flex-col md:flex-row bg-white rounded-xl shadow-lg overflow-hidden min-h-[70vh]">
+            
+            <!-- Sidebar Navigation -->
+            <nav class="w-full md:w-1/3 lg:w-1/4 bg-slate-100 p-4 sm:p-6 border-b md:border-b-0 md:border-r border-slate-200">
+                <h2 class="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-3">Disclaimer Topics</h2>
+                <div class="space-y-2">
+                    <button class="nav-button w-full text-left px-4 py-3 rounded-lg font-medium text-slate-700 active" data-target="content-info">
+                        1. Project Information
+                    </button>
+                    <button class="nav-button w-full text-left px-4 py-3 rounded-lg font-medium text-slate-700" data-target="content-investment">
+                        2. Investment & Returns
+                    </button>
+                    <button class="nav-button w-full text-left px-4 py-3 rounded-lg font-medium text-slate-700" data-target="content-links">
+                        3. External Links
+                    </button>
+                    <button class="nav-button w-full text-left px-4 py-3 rounded-lg font-medium text-slate-700" data-target="content-liability">
+                        4. Limitation of Liability
+                    </button>
+                </div>
+            </nav>
+
+            <!-- Content Panel -->
+            <main class="w-full md:w-2/3 lg:w-3/4 p-6 sm:p-8 lg:p-10">
+
+                <!-- Section 1: Project Information -->
+                <div id="content-info" class="content-panel prose max-w-none">
+                    <h3 class="text-2xl font-semibold text-ranch-primary mb-4">1. Project Information and Accuracy</h3>
+                    <p class="mb-6 text-gray-700">The information, specifications, images, and visual representations (including all floor plans, layouts, dimensions, elevation designs, amenities, and landscapes) provided on this Site are illustrative, conceptual, and provided in good faith. They are intended only to convey the general concept and vision of the Project.</p>
+
+                    <h4 class="font-semibold text-slate-700">Changes & Modifications:</h4>
+                    <p class="mt-1 mb-4 text-gray-600">The developers, USM Infra, reserve the right to make changes, alterations, additions, or deletions to the Project design, specifications, features, and pricing without prior notice, at their sole discretion, or as required by any competent authority.</p>
+
+                    <h4 class="font-semibold text-slate-700">Binding Documents:</h4>
+                    <p class="mt-1 text-gray-600">All details and final specifications must be verified in the legally binding agreements (e.g., Sale Deed, Agreement for Sale) executed between the Purchaser and the Developer. Nothing on this Site constitutes an offer, contract, or warranty.</p>
+                </div>
+
+                <!-- Section 2: Investment & Returns -->
+                <div id="content-investment" class="content-panel prose max-w-none hidden">
+                    <h3 class="text-2xl font-semibold text-ranch-primary mb-4">2. Investment and Agricultural Returns Disclaimer</h3>
+                    <p class="mb-4 text-gray-700">The Project includes the sale of resort plots along with the cultivation of Sandalwood trees. Prospective buyers must understand and acknowledge the following critical risks:</p>
+
+                    <!-- CRITICAL: Highlighted Risk Section -->
+                    <div class="mt-4 p-5 bg-yellow-50 border-l-4 border-yellow-400 rounded-r-lg">
+                        <h4 class="font-bold text-yellow-800 flex items-center"><span class="text-2xl mr-2">&#9888;</span> Not a Financial Guarantee</h4>
+                        <p class="mt-2 text-yellow-700">The potential for future returns, yields, profits, or capital appreciation from the sale or harvesting of Sandalwood is based on projections, historical trends, and market assumptions. These projections are <strong class="uppercase">not guaranteed</strong> and are subject to market volatility, agricultural risks, regulatory changes, and environmental factors beyond the control of the Developer.</p>
+                        
+                        <h4 class="font-bold text-yellow-800 flex items-center mt-6"><span class="text-2xl mr-2">&#9888;</span> Agricultural Risk</h4>
+                        <p class="mt-2 text-yellow-700">Sandalwood cultivation is inherently subject to agricultural risks, including weather, pest infestation, disease, changes in governmental forestry policies, and delays in harvest. The developer provides best-effort maintenance, but the performance of the trees cannot be guaranteed.</p>
+
+                        <h4 class="font-bold text-yellow-800 flex items-center mt-6"><span class="text-2xl mr-2">&#9888;</span> Investment Decisions</h4>
+                        <p class="mt-2 text-yellow-700">Prospective purchasers should treat the plot purchase as a real estate transaction and should not rely solely on the projected Sandalwood revenue as a guaranteed return on investment. Buyers should consult with independent financial, legal, and tax advisors before making any purchase decision.</p>
+                    </div>
+                </div>
+                
+                <!-- Section 3: External Links -->
+                <div id="content-links" class="content-panel prose max-w-none hidden">
+                    <h3 class="text-2xl font-semibold text-ranch-primary mb-4">3. External Links</h3>
+                    <p class="text-gray-700">This Site may contain links to external websites that are not operated by the Developer. These links are provided for your convenience. We do not endorse the content of these third-party sites and are not responsible for their accuracy, content, or privacy practices.</p>
+                </div>
+
+                <!-- Section 4: Limitation of Liability -->
+                <div id="content-liability" class="content-panel prose max-w-none hidden">
+                    <h3 class="text-2xl font-semibold text-ranch-primary mb-4">4. Limitation of Liability</h3>
+                    <p classThis Site may contain links to external websites that are not operated by the Developer. These links are provided for your convenience. We do not endorse the content of these third-party sites and are not responsible for their accuracy, content, or privacy practices.="text-gray-700">The Developer, USM Infra, and its affiliates, directors, employees, and agents shall not be liable for any direct, indirect, incidental, consequential, or punitive damages arising out of your access to, use of, or inability to use the Site or the information contained herein. You agree that your use of the Site is entirely at your own risk.</p>
+                </div>
+
+            </main>
+        </div>
+
+        <footer class="mt-8 text-center">
+            <p class="text-sm text-slate-500">Last Updated: November 2025.</p>
+            <p class="text-xs text-slate-400 mt-1">By accessing and using this Site, you accept and agree to be bound by the terms of this Disclaimer.</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navButtons = document.querySelectorAll('.nav-button');
+            const contentPanels = document.querySelectorAll('.content-panel');
+
+            navButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const targetId = button.getAttribute('data-target');
+
+                    // 1. Update Buttons
+                    navButtons.forEach(btn => {
+                        btn.classList.remove('active');
+                    });
+                    button.classList.add('active');
+
+                    // 2. Update Content Panels
+                    contentPanels.forEach(panel => {
+                        if (panel.id === targetId) {
+                            panel.classList.remove('hidden');
+                        } else {
+                            panel.classList.add('hidden');
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

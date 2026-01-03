@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Go-Ranch AI Investment Consultant</title>
+    <!-- Load Tailwind CSS --><script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Lucide Icons for aesthetic elements --><script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Custom Tailwind Configuration (Matching Go-Ranch Colors) --><script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'ranch-primary': '#004d40', // Deep Forest Green/Teal
+                        'ranch-accent': '#FFC107',  // Gold/Amber for highlights
+                        'ranch-light': '#E0F2F1',
+                        'ranch-dark': '#00251A',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Hide the default scrollbar for a cleaner look */
+        #chat-window::-webkit-scrollbar {
+            display: none;
+        }
+        #chat-window {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+        .nav-link {
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #FFC107;
+        }
+    </style>
+</head>
+<body class="font-sans bg-ranch-light min-h-screen flex flex-col">
+
+    <!-- HEADER & NAVIGATION -->
+    <header id="main-header" class="fixed top-0 left-0 w-full z-50 bg-ranch-dark py-4 text-white shadow-lg">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+            <div class="flex items-center gap-2 group cursor-pointer">
+                <div class="w-10 h-10 bg-ranch-accent rounded-lg flex items-center justify-center rotate-3 group-hover:rotate-0 transition-transform duration-300">
+                    <i data-lucide="tree-pine" class="text-ranch-dark w-6 h-6"></i>
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-xl font-black tracking-tighter leading-none text-white group-hover:text-ranch-accent transition-colors">GO-RANCH</span>
+                    <span class="text-[10px] uppercase tracking-widest text-ranch-accent font-bold">Resorts & Estates</span>
+                </div>
+            </div>
+            
+            <div class="hidden lg:flex items-center gap-6 text-sm font-semibold">
+                <a href="#" class="nav-link">Home</a>
+                <div class="relative dropdown-group">
+                    <button class="nav-link flex items-center gap-1">
+                        <a href="Plot & Pricing" class="nav-link">Plots & Pricing</a><i data-lucide="chevron-down" class="w-4 h-4 opacity-50"></i>
+                    </button>
+                    <div class="dropdown-menu absolute top-full left-0 mt-2 w-48 bg-white text-ranch-dark shadow-2xl rounded-xl overflow-hidden border border-gray-100 hidden group-hover:block">
+                        <a href="https://drive.google.com/file/d/1egb9KKyDC_KutAKTaDA79ABvLZPkRoz0/view" target="_blank" class="flex items-center gap-3 px-4 py-3 hover:bg-ranch-light transition border-b border-gray-50">
+                            <i data-lucide="map" class="w-4 h-4 text-ranch-primary"></i> View Pricing
+                        </a>
+                    </div>
+                </div>
+                <a href="Sandalwood Plantation" class="nav-link">Sandalwood Plantation</a>
+                <a href="Resort & Cottages" class="nav-link">Resort & Cottages</a>
+                <a href="Ask AI" class="nav-link">Ask AI</a>
+                <a href="FAQ's" class="nav-link">FAQ's</a>
+                <a href="Customer Support App" class="nav-link">Customer Support App</a>
+                <a href="Other Projects" class="nav-link">Other Projects</a>
+                <a href="Contact Sales" class="nav-link">Contact Sales</a>
+                <div class="flex items-center gap-3 ml-4">
+                    <a href="Book Site Visit" class="px-5 py-2 border border-ranch-accent text-ranch-accent rounded-full font-bold hover:bg-ranch-accent hover:text-ranch-dark transition-all shadow-sm">Book Site Visit</a>
+                </div>
+            </div>
+
+            <button class="lg:hidden text-white" id="mobile-menu-btn">
+                <i data-lucide="menu" class="w-8 h-8"></i>
+            </button>
+        </nav>
+    </header>
+    
+    <!-- MOBILE-FIRST APP HEADER SECTION (Spacer + App Info) -->
+    <section class="bg-ranch-primary py-10 text-center text-white shadow-xl mt-16">
+        <div class="container mx-auto px-4">
+            <!-- 3 line spaces -->
+            <div class="h-6"></div>
+            <div class="h-6"></div>
+            <div class="h-6"></div>
+            
+            <div class="w-20 h-20 mx-auto mb-4 bg-ranch-accent rounded-2xl flex items-center justify-center shadow-lg">
+                <i data-lucide="smartphone" class="w-10 h-10 text-ranch-dark"></i>
+            </div>
+            <h1 class="text-3xl font-extrabold text-white mb-1">Your Go-Ranch Digital Hub</h1>
+            <p class="text-lg font-light text-ranch-light max-w-sm mx-auto">The **USM My City Customer App** is your gateway to managing your investment and lifestyle.</p>
+        </div>
+    </section>
+
+    <!-- CONSULTANT CONTENT SECTION -->
+    <main class="flex-grow flex flex-col items-center justify-start p-4 sm:p-8">
+        <!-- Title, Description, and Suggested Queries -->
+        <div class="w-full max-w-4xl mb-6 text-center">
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-ranch-dark mb-2">Investment Clarity: Your AI Consultation Hub</h2>
+            <p class="text-lg text-gray-700 max-w-3xl mx-auto mb-4">
+                Use this interactive consultant to ask targeted, detailed questions about the Go-Ranch Sandalwood Plantation Resort project. Clear all your doubts regarding **investment benefits**, **required future developments** in the area, and the **documentation needed** after purchase to successfully build your dream home post-cultivation.
+            </p>
+            
+            <div id="suggested-queries" class="flex flex-wrap justify-center gap-2 mt-4 max-w-4xl mx-auto">
+                <button class="query-btn px-4 py-2 bg-white text-ranch-primary border border-ranch-primary rounded-full text-sm font-medium hover:bg-ranch-primary hover:text-white transition duration-200" 
+                        data-query="Is investing in Go-Ranch Sandalwood beneficial for long-term wealth creation?">
+                    Investment Benefits?
+                </button>
+                <button class="query-btn px-4 py-2 bg-white text-ranch-primary border border-ranch-primary rounded-full text-sm font-medium hover:bg-ranch-primary hover:text-white transition duration-200" 
+                        data-query="What essential documents are needed to build a house on my plot after the 15-year sandalwood cultivation period?">
+                    Post-Cultivation Docs?
+                </button>
+                <button class="query-btn px-4 py-2 bg-white text-ranch-primary border border-ranch-primary rounded-full text-sm font-medium hover:bg-ranch-primary hover:text-white transition duration-200" 
+                        data-query="What infrastructure developments are required around Go-Ranch to support a residential community?">
+                    Surrounding Development Needs?
+                </button>
+                <button class="query-btn px-4 py-2 bg-white text-ranch-primary border border-ranch-primary rounded-full text-sm font-medium hover:bg-ranch-primary hover:text-white transition duration-200" 
+                        data-query="What is the latest status of the Regional Ring Road (RRR) and its proximity to Go-Ranch?">
+                    RRR Proximity Status?
+                </button>
+            </div>
+        </div>
+        
+        <!-- Main Chat Container -->
+        <div class="w-full max-w-4xl bg-white rounded-2xl shadow-2xl overflow-hidden flex flex-col h-[60vh]">
+            <!-- Header -->
+            <div class="bg-ranch-primary p-4 sm:p-6 text-white flex items-center justify-between shadow-lg">
+                <div class="flex items-center">
+                    <i data-lucide="brain-circuit" class="w-8 h-8 mr-3 text-ranch-accent"></i>
+                    <h1 class="text-xl sm:text-2xl font-bold">AI Consultant Chat</h1>
+                </div>
+            </div>
+
+            <!-- Chat Window -->
+            <div id="chat-window" class="flex-grow p-4 sm:p-6 space-y-6 overflow-y-auto bg-gray-50">
+                <div class="flex justify-start">
+                    <div class="max-w-3xl bg-ranch-light p-4 rounded-xl rounded-tl-none shadow-md text-ranch-dark">
+                        <p class="font-semibold mb-2">Hello! I'm the Go-Ranch Investment Consultant AI.</p>
+                        <p class="text-sm">I'm here to provide you with factual information, investment analysis, and answer your questions about the Go-Ranch Sandalwood project near Yadadri. Feel free to ask about the benefits, surrounding developments, or documentation needed for future home construction!</p>
+                    </div>
+                </div>
+                <div id="loading-indicator" class="flex justify-start hidden">
+                    <div class="max-w-3xl bg-ranch-light p-4 rounded-xl rounded-tl-none shadow-md text-ranch-dark">
+                        <p class="animate-pulse">Consultant is thinking...</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Input Area -->
+            <div class="p-4 sm:p-6 border-t border-gray-200 bg-white flex items-center">
+                <input type="text" id="user-input" placeholder="Ask your question..." 
+                       class="flex-grow p-3 border border-gray-300 rounded-l-full focus:outline-none focus:ring-2 focus:ring-ranch-accent">
+                <button id="send-button" class="bg-ranch-accent text-ranch-dark px-6 py-3 font-semibold rounded-r-full hover:bg-yellow-400 transition duration-300 flex items-center justify-center shadow-md">
+                    <i data-lucide="send" class="w-5 h-5"></i>
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        lucide.createIcons();
+
+        // --- GEMINI API CONFIGURATION ---
+        const apiKey = ""; // API key is provided at runtime
+        const model = "gemini-2.5-flash-preview-09-2025";
+        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
+
+        const systemPrompt = "You are the Go-Ranch Investment Consultant AI. Your goal is to provide trustworthy, factual, and beneficial advice regarding investment in the Go-Ranch Sandalwood project near Yadadri, Telangana. Use up-to-date, real-time information to ground your answers. Address customer concerns related to property security, future development, and necessary documentation for future home construction. Keep answers professional, concise, and focused on tangible benefits and legal requirements.";
+
+        const chatWindow = document.getElementById('chat-window');
+        const userInput = document.getElementById('user-input');
+        const sendButton = document.getElementById('send-button');
+        const loadingIndicator = document.getElementById('loading-indicator');
+        const queryButtons = document.querySelectorAll('.query-btn');
+
+        const appendMessage = (text, role, sources = []) => {
+            const messageContainer = document.createElement('div');
+            messageContainer.className = `flex ${role === 'user' ? 'justify-end' : 'justify-start'}`;
+
+            const bubble = document.createElement('div');
+            bubble.className = `max-w-3xl p-4 rounded-xl shadow-md text-sm ${
+                role === 'user'
+                    ? 'bg-ranch-primary text-white rounded-br-none'
+                    : 'bg-white text-ranch-dark rounded-tl-none border border-gray-100'
+            }`;
+            bubble.innerHTML = text.replace(/\n/g, '<br>');
+
+            messageContainer.appendChild(bubble);
+            chatWindow.appendChild(messageContainer);
+
+            if (role !== 'user' && sources.length > 0) {
+                const sourcesDiv = document.createElement('div');
+                sourcesDiv.className = 'text-xs mt-2 pt-2 border-t border-gray-300 text-gray-500';
+                sourcesDiv.innerHTML = '<strong>Sources:</strong> ' + sources.map((s, index) => 
+                    `<a href="${s.uri}" target="_blank" class="hover:underline text-ranch-primary">${s.title || `Source ${index + 1}`}</a>`
+                ).join(' | ');
+                bubble.appendChild(sourcesDiv);
+            }
+            chatWindow.scrollTop = chatWindow.scrollHeight;
+        };
+        
+        const sendMessage = async () => {
+            const query = userInput.value.trim();
+            if (!query) return;
+
+            appendMessage(query, 'user');
+            userInput.value = '';
+            sendButton.disabled = true;
+            userInput.disabled = true;
+
+            loadingIndicator.classList.remove('hidden');
+            chatWindow.scrollTop = chatWindow.scrollHeight;
+
+            const payload = {
+                contents: [{ parts: [{ text: query }] }],
+                tools: [{ "google_search": {} }], 
+                systemInstruction: {
+                    parts: [{ text: systemPrompt }]
+                },
+            };
+
+            let maxRetries = 5;
+            let delay = 1000;
+            let response;
+            
+            for (let i = 0; i < maxRetries; i++) {
+                try {
+                    response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+                    
+                    if (response.ok) break;
+                    if (response.status === 429 && i < maxRetries - 1) {
+                        await new Promise(r => setTimeout(r, delay));
+                        delay *= 2; 
+                    } else {
+                        throw new Error(`Status: ${response.status}`);
+                    }
+                } catch (error) {
+                    if (i === maxRetries - 1) {
+                         appendMessage("Service unavailable. Please try again later.", 'model');
+                         loadingIndicator.classList.add('hidden');
+                         sendButton.disabled = false;
+                         userInput.disabled = false;
+                         return; 
+                    }
+                    await new Promise(r => setTimeout(r, delay));
+                    delay *= 2; 
+                }
+            }
+            
+            loadingIndicator.classList.add('hidden');
+            sendButton.disabled = false;
+            userInput.disabled = false;
+
+            try {
+                const result = await response.json();
+                const candidate = result.candidates?.[0];
+                if (candidate?.content?.parts?.[0]?.text) {
+                    const text = candidate.content.parts[0].text;
+                    let sources = candidate.groundingMetadata?.groundingAttributions?.map(a => ({
+                        uri: a.web?.uri,
+                        title: a.web?.title,
+                    })).filter(s => s.uri && s.title) || [];
+                    appendMessage(text, 'model', sources);
+                }
+            } catch (error) {
+                appendMessage("Error processing request.", 'model');
+            }
+        };
+
+        sendButton.addEventListener('click', sendMessage);
+        userInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') sendMessage(); });
+        queryButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                userInput.value = btn.getAttribute('data-query');
+                sendMessage();
+            });
+        });
+    </script>
+</body>
+</html>

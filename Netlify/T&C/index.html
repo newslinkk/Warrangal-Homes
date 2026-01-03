@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Go-Ranch Interactive Terms & Conditions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'ranch-primary': '#004d40',
+                        'ranch-accent': '#FFC107',
+                        'ranch-light': '#E0F2F1',
+                        'ranch-dark': '#00251A',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Chosen Palette: Go-Ranch Corporate (Deep Green, Gold Accent, Light Teal) -->
+    <!-- Application Structure Plan: The original .md file is a single, long-scrolling document, which is poor for usability. This SPA re-architects the content into a vertical tabbed interface (like a settings dashboard). A persistent sidebar navigation allows users to click a topic (e.g., "Sandalwood Agreement"), and the main content panel dynamically updates (via JS) to show *only* that section's text. This component-based structure is ideal for consuming a complex legal document, as it chunks the information logically and makes finding specific terms instantaneous. -->
+    <!-- Visualization & Content Choices: Report Info (Section 1: Definitions) -> Goal(Inform) -> Presentation(Text Block) -> Interaction(Show/hide via nav click) -> Justification(Reference lookup) -> Library(JS). Report Info (Section 3: Sandalwood) -> Goal(Inform) -> Presentation(Text Block + Highlighted Risk Box) -> Interaction(Show/hide via nav click) -> Justification(This is the most complex section and benefits from its own view). Report Info (Section 3.5: Risks) -> Goal(Warn/Disclose) -> Presentation(A visually distinct `div` with a yellow background `bg-yellow-50` and a warning icon `&#9888;` to elevate "fine print" to be unmissable.) -> Interaction(Appears with Section 3) -> Justification(User-centric design requires highlighting critical risks, not burying them). All other sections are mapped 1:1 to their own content panel, activated by the sidebar navigation. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        .nav-button {
+            transition: all 0.2s ease-in-out;
+        }
+        .nav-button.active {
+            background-color: #004d40;
+            color: white;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        .nav-button:not(.active):hover {
+            background-color: #E0F2F1;
+        }
+    </style>
+</head>
+<body class="font-sans bg-slate-50 text-slate-800">
+
+    <div class="container mx-auto max-w-6xl p-4 sm:p-8">
+        
+        <div class="mb-6">
+            <h1 class="text-3xl font-bold text-ranch-primary">Interactive Terms & Conditions</h1>
+            <p class="text-lg text-slate-600">Go Ranch Resort Sandalwood Plots</p>
+        </div>
+
+        <div class="flex flex-col md:flex-row bg-white rounded-xl shadow-lg overflow-hidden min-h-[70vh]">
+            
+            <!-- Sidebar Navigation -->
+            <nav class="w-full md:w-1/4 bg-slate-100 p-4 sm:p-6 border-b md:border-b-0 md:border-r border-slate-200">
+                <h2 class="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-3">Agreement Topics</h2>
+                <div class="space-y-2">
+                    <button class="nav-button w-full text-left px-4 py-3 rounded-lg font-medium text-slate-700 active" data-target="content-summary">
+                        Summary & Acceptance
+                    </button>
+                    <button class="nav-button w-full text-left px-4 py-3 rounded-lg font-medium text-slate-700" data-target="content-plot">
+                        Plot Purchase & Legal
+                    </button>
+                    <button class="nav-button w-full text-left px-4 py-3 rounded-lg font-medium text-slate-700" data-target="content-sandalwood">
+                        Sandalwood Agreement
+                    </button>
+                    <button class="nav-button w-full text-left px-4 py-3 rounded-lg font-medium text-slate-700" data-target="content-membership">
+                        Resort Membership
+                    </button>
+                    <button class="nav-button w-full text-left px-4 py-3 rounded-lg font-medium text-slate-700" data-target="content-website">
+                        Website & IP
+                    </button>
+                    <button class="nav-button w-full text-left px-4 py-3 rounded-lg font-medium text-slate-700" data-target="content-law">
+                        Governing Law & Disputes
+                    </button>
+                </div>
+            </nav>
+
+            <!-- Content Panel -->
+            <main class="w-full md:w-3/4 p-6 sm:p-8 lg:p-10">
+
+                <!-- Section: Summary (Maps to Section 1) -->
+                <div id="content-summary" class="content-panel prose max-w-none">
+                    <h3 class="text-2xl font-semibold text-ranch-primary mb-4">Summary & Acceptance</h3>
+                    <p class="mb-4 text-gray-700">This section outlines the key parties involved and confirms that using this website or starting a purchase means you accept these terms.</p>
+                    
+                    <h4 class="font-semibold text-slate-700">1.1. The Promoter/Developer:</h4>
+                    <p>Refers to USM Infra and/or its associated entities responsible for the development and management of the Go Ranch Resort Project.</p>
+
+                    <h4 class="font-semibold text-slate-700 mt-4">1.2. The Project:</h4>
+                    <p>Refers to the DTCP Approved mega-project, Go Ranch Resort, located near Yadadri, featuring residential/farm plots and a resort facility.</p>
+
+                    <h4 class="font-semibold text-slate-700 mt-4">1.3. The Plot:</h4>
+                    <p>Refers to the specific unit of land (e.g., 120 Sq Yds or 240 Sq Yds) purchased by the Buyer within the approved layout.</p>
+
+                    <h4 class="font-semibold text-slate-700 mt-4">1.4. The Buyer/Investor:</h4>
+                    <p>Refers to the individual or entity purchasing The Plot.</p>
+
+                    <h4 class="font-semibold text-slate-700 mt-4">1.5. Acceptance:</h4>
+                    <p>Usage of this Website or initiation of a purchase process constitutes full acceptance of these Terms.</p>
+                </div>
+
+                <!-- Section: Plot Purchase (Maps to Section 2) -->
+                <div id="content-plot" class="content-panel prose max-w-none hidden">
+                    <h3 class="text-2xl font-semibold text-ranch-primary mb-4">Plot Purchase & Legal Compliance</h3>
+                    <p class="mb-4 text-gray-700">Here's what you need to know about the legal status of your plot, title, and usage rules.</p>
+
+                    <h4 class="font-semibold text-slate-700">2.1. DTCP Approval:</h4>
+                    <p>All plots are sold under the DTCP Approved Layout <code class="bg-slate-200 px-2 py-1 rounded">L.P. 150/2019/W</code>. The Buyer acknowledges that they have reviewed or have been provided the opportunity to review the necessary RERA and DTCP documentation.</p>
+
+                    <h4 class="font-semibold text-slate-700 mt-4">2.2. Title:</h4>
+                    <p>Upon full payment and completion of all legal formalities, the Plot will be registered in the name of the Buyer via a sale deed. The Buyer is responsible for all associated registration costs, stamp duties, and taxes as per prevailing government norms.</p>
+
+                    <h4 class="font-semibold text-slate-700 mt-4">2.3. Purpose of Use:</h4>
+                    <p>The Plot is designated primarily as a sandalwood plantation investment and/or farm plot. Any future construction must strictly adhere to the Project's master plan, DTCP regulations, and local building codes.</p>
+                </div>
+
+                <!-- Section: Sandalwood (Maps to Section 3) -->
+                <div id="content-sandalwood" class="content-panel prose max-w-none hidden">
+                    <h3 class="text-2xl font-semibold text-ranch-primary mb-4">Sandalwood Plantation Scheme (The 50-50 Agreement)</h3>
+                    <p class="mb-6 text-gray-700">This section details the 15-year Sandalwood Agreement, including maintenance, profit sharing, and critical risks.</p>
+
+                    <h4 class="font-semibold text-slate-700">3.1. Plantation Service:</h4>
+                    <p>The Promoter agrees to plant and maintain 10 Sandalwood (Santalum album) plants per 120 Sq Yds (1 Unit) of the Plot for a period of fifteen (15) years from the date of planting ("Maintenance Period").</p>
+
+                    <h4 class="font-semibold text-slate-700 mt-4">3.2. Maintenance Fee:</h4>
+                    <p>The maintenance, care, security, and scientific management of the Sandalwood plants during the Maintenance Period shall be provided <strong class="text-ranch-primary">free of cost</strong> to the Buyer.</p>
+
+                    <h4 class="font-semibold text-slate-700 mt-4">3.3. Profit Sharing:</h4>
+                    <p>At the end of the Maintenance Period, or at the time of legal harvest (whichever is later), the Promoter will coordinate the harvesting, processing, and sale of the heartwood. The net profit realized from the sale of the Buyer’s trees will be shared on a <strong class="text-ranch-primary">50% (Buyer) to 50% (Promoter)</strong> basis.</p>
+
+                    <h4 class="font-semibold text-slate-700 mt-4">3.4. Security & Transparency:</h4>
+                    <p>The Promoter assures the use of GPS-enabled chips or similar technology for tree tracking. The Buyer will be provided with reasonable documentation regarding the planting date, tree counts, and harvest proceedings.</p>
+
+                    <!-- CRITICAL: Highlighted Risk Section -->
+                    <div class="mt-8 p-5 bg-yellow-50 border-l-4 border-yellow-400 rounded-r-lg">
+                        <h4 class="font-bold text-yellow-800 flex items-center"><span class="text-2xl mr-2">&#9888;</span> 3.5. Critical Risks and Disclaimers</h4>
+                        <ul class="list-disc list-inside mt-3 text-yellow-700 space-y-2">
+                            <li><strong>No Guarantee:</strong> The Promoter does not guarantee the quantity or quality of the yield, the market price of sandalwood at the time of harvest, or a specific financial return (ROI).</li>
+                            <li><strong>Force Majeure:</strong> The Promoter is not responsible for losses to the plantation caused by natural calamities (e.g., floods, fire, severe drought), governmental actions, unforeseen pest infestations, or any events beyond the Promoter’s reasonable control. In such events, the Promoter will use reasonable efforts to mitigate losses but the 50-50 profit sharing will apply to any residual yield.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Section: Membership (Maps to Section 4) -->
+                <div id="content-membership" class="content-panel prose max-w-none hidden">
+                    <h3 class="text-2xl font-semibold text-ranch-primary mb-4">Resort Membership</h3>
+                    <p class="mb-4 text-gray-700">This outlines the complimentary Resort Membership included with your plot purchase.</p>
+
+                    <h4 class="font-semibold text-slate-700">4.1. Free Membership:</h4>
+                    <p>The purchase of a Plot entitles the Buyer to a complimentary, non-transferable resort membership to the Go Ranch Resort facility for the duration specified in the separate Resort Membership Agreement.</p>
+
+                    <h4 class="font-semibold text-slate-700 mt-4">4.2. Access and Usage:</h4>
+                    <p>The membership grants access to most common amenities (pools, adventure games, sports courts) free of charge, as outlined in the Project brochure. Certain luxury facilities or stay options may incur nominal charges, which will be clearly communicated by the Resort Management.</p>
+
+                    <h4 class="font-semibold text-slate-700 mt-4">4.3. Resort Rules:</h4>
+                    <p>The Buyer agrees to abide by all rules, regulations, and usage policies set forth by the Resort Management.</p>
+                </div>
+
+                <!-- Section: Website (Maps to Section 5) -->
+                <div id="content-website" class="content-panel prose max-w-none hidden">
+                    <h3 class="text-2xl font-semibold text-ranch-primary mb-4">Website Usage & Intellectual Property</h3>
+                    <p class="mb-4 text-gray-700">This covers the terms for using this website (www.warrangal-highway.homes) itself.</p>
+
+                    <h4 class="font-semibold text-slate-700">5.1. Content Accuracy:</h4>
+                    <p>While the Promoter strives for accuracy, the information on this Website, including prices, availability, project specifications, and projected returns, is subject to change without prior notice. Marketing materials and visualizations are conceptual and may not reflect the final delivered project.</p>
+
+                    <h4 class="font-semibold text-slate-700 mt-4">5.2. Intellectual Property:</h4>
+                    <p>All content, graphics, logos, and property names displayed on the Website are the property of the Promoter or its licensors. Unauthorized use is strictly prohibited.</p>
+                </div>
+
+                <!-- Section: Law (Maps to Section 6) -->
+                <div id="content-law" class="content-panel prose max-w-none hidden">
+                    <h3 class="text-2xl font-semibold text-ranch-primary mb-4">Governing Law & Dispute Resolution</h3>
+                    <p class="mb-4 text-gray-700">This section defines the legal framework for the agreement.</p>
+
+                    <h4 class="font-semibold text-slate-700">6.1. Governing Law:</h4>
+                    <p>These Terms shall be governed by and construed in accordance with the laws of the Republic of India and the state of Telangana.</p>
+
+                    <h4 class="font-semibold text-slate-700 mt-4">6.2. Jurisdiction:</h4>
+                    <p>Any disputes arising out of or in connection with the purchase of The Plot, the Sandalwood Scheme, or these Terms shall be subject to the exclusive jurisdiction of the competent courts in Hyderabad, Telangana.</p>
+                </div>
+
+            </main>
+        </div>
+
+        <footer class="mt-8 text-center">
+            <p class="text-sm text-slate-500">Effective Date: November 6, 2025. By proceeding with an inquiry or purchase, you confirm that you have read, understood, and agreed to these Terms and Conditions.</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navButtons = document.querySelectorAll('.nav-button');
+            const contentPanels = document.querySelectorAll('.content-panel');
+
+            navButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const targetId = button.getAttribute('data-target');
+
+                    // 1. Update Buttons
+                    navButtons.forEach(btn => {
+                        btn.classList.remove('active');
+                    });
+                    button.classList.add('active');
+
+                    // 2. Update Content Panels
+                    contentPanels.forEach(panel => {
+                        if (panel.id === targetId) {
+                            panel.classList.remove('hidden');
+                        } else {
+                            panel.classList.add('hidden');
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

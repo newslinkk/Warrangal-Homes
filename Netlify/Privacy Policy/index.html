@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Go-Ranch Interactive Privacy Policy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'ranch-primary': '#004d40',
+                        'ranch-accent': '#FFC107',
+                        'ranch-light': '#E0F2F1',
+                        'ranch-dark': '#00251A',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Chosen Palette: Go-Ranch Corporate (Deep Green, Gold Accent, Light Teal) -->
+    <!-- Application Structure Plan: The original .md file is a single, long-scrolling document, which is poor for usability. This SPA re-architects the content into a vertical tabbed interface (like a settings dashboard). A persistent sidebar navigation allows users to click a topic (e.g., "Data Security"), and the main content panel dynamically updates (via JS) to show *only* that section's text. This component-based structure is ideal for consuming a complex legal document, as it chunks the information logically and makes finding specific terms instantaneous. -->
+    <!-- Visualization & Content Choices: Report Info (All 7 Sections) -> Goal(Inform) -> Presentation(Text Block) -> Interaction(Show/hide panel via sidebar nav click) -> Justification(Meets core goal of making dense text "explorable" and "easy to navigate") -> Library(Vanilla JS). Report Info (Section 4: Data Security Discliamer) -> Goal(Warn/Disclose) -> Presentation(A visually distinct `div` with a yellow background `bg-yellow-50` and a warning icon `&#9888;` to elevate "fine print" to be unmissable.) -> Interaction(Appears with Section 4) -> Justification(User-centric design requires highlighting critical risks, not burying them). -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        .nav-button {
+            transition: all 0.2s ease-in-out;
+        }
+        .nav-button.active {
+            background-color: #004d40;
+            color: white;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        .nav-button:not(.active):hover {
+            background-color: #E0F2F1;
+        }
+    </style>
+</head>
+<body class="font-sans bg-slate-50 text-slate-800">
+
+    <div class="container mx-auto max-w-6xl p-4 sm:p-8">
+        
+        <div class="mb-6">
+            <h1 class="text-3xl font-bold text-ranch-primary">Interactive Privacy Policy</h1>
+            <p class="text-lg text-slate-600">Go Ranch Resort Sandalwood Plots</p>
+        </div>
+
+        <div class="flex flex-col md:flex-row bg-white rounded-xl shadow-lg overflow-hidden min-h-[70vh]">
+            
+            <!-- Sidebar Navigation -->
+            <nav class="w-full md:w-1/3 lg:w-1/4 bg-slate-100 p-4 sm:p-6 border-b md:border-b-0 md:border-r border-slate-200">
+                <h2 class="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-3">Policy Sections</h2>
+                <div class="space-y-2">
+                    <button class="nav-button w-full text-left px-4 py-3 rounded-lg font-medium text-slate-700 active" data-target="content-collected">
+                        1. Information We Collect
+                    </button>
+                    <button class="nav-button w-full text-left px-4 py-3 rounded-lg font-medium text-slate-700" data-target="content-use">
+                        2. How We Use Your Information
+                    </button>
+                    <button class="nav-button w-full text-left px-4 py-3 rounded-lg font-medium text-slate-700" data-target="content-disclosure">
+                        3. Disclosure of Your Information
+                    </button>
+                    <button class="nav-button w-full text-left px-4 py-3 rounded-lg font-medium text-slate-700" data-target="content-security">
+                        4. Data Security
+                    </button>
+                    <button class="nav-button w-full text-left px-4 py-3 rounded-lg font-medium text-slate-700" data-target="content-rights">
+                        5. Your Choices and Rights
+                    </button>
+                    <button class="nav-button w-full text-left px-4 py-3 rounded-lg font-medium text-slate-700" data-target="content-changes">
+                        6. Changes to Our Policy
+                    </button>
+                    <button class="nav-button w-full text-left px-4 py-3 rounded-lg font-medium text-slate-700" data-target="content-contact">
+                        7. Contact Information
+                    </button>
+                </div>
+            </nav>
+
+            <!-- Content Panel -->
+            <main class="w-full md:w-2/3 lg:w-3/4 p-6 sm:p-8 lg:p-10">
+
+                <!-- Section 1: Information We Collect -->
+                <div id="content-collected" class="content-panel">
+                    <h3 class="text-2xl font-semibold text-ranch-primary mb-4">1. Information We Collect</h3>
+                    <p class="mb-6 text-gray-700">We primarily collect information that helps us manage your inquiries and market the Go Ranch Resort Project.</p>
+                    
+                    <h4 class="font-semibold text-slate-700 text-lg">A. Information You Provide Directly</h4>
+                    <p class="mt-2 mb-4 text-gray-600">This includes personal information you voluntarily submit to us, primarily through inquiry forms, booking forms, or direct communication (email/phone). This information may include:</p>
+                    <ul class="list-disc list-inside space-y-2 mb-6 text-gray-700">
+                        <li><strong>Contact Data:</strong> Your name, email address, phone number, and mailing address.</li>
+                        <li><strong>Inquiry Details:</strong> Questions, comments, or specific interests regarding plot sizes, investment goals, or the Sandalwood Scheme.</li>
+                        <li><strong>Transaction Data:</strong> Details related to potential or confirmed plot bookings or purchases (excluding sensitive financial data, which is handled through secure payment gateways).</li>
+                    </ul>
+
+                    <h4 class="font-semibold text-slate-700 text-lg">B. Information Collected Automatically</h4>
+                    <p class="mt-2 mb-4 text-gray-600">When you visit our website, we automatically collect certain technical data using cookies and similar technologies. This data helps us understand site performance and user behavior:</p>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700">
+                        <li><strong>Usage Data:</strong> Information about how you use the site, such as the pages you view, the time spent on pages, and the links you click.</li>
+                        <li><strong>Device Data:</strong> Information about the device and browser you use, including IP address, operating system, and browser type.</li>
+                    </ul>
+                </div>
+
+                <!-- Section 2: How We Use Your Information -->
+                <div id="content-use" class="content-panel hidden">
+                    <h3 class="text-2xl font-semibold text-ranch-primary mb-4">2. How We Use Your Information</h3>
+                    <p class="mb-6 text-gray-700">We use the collected information for the following core purposes:</p>
+                    <ul class="list-disc list-inside space-y-3 text-gray-700">
+                        <li><strong>To Respond to Inquiries:</strong> To contact you with requested information about the Go Ranch Resort Project, plot availability, pricing, and the Sandalwood Scheme.</li>
+                        <li><strong>For Marketing and Communication:</strong> To send you newsletters, promotional materials, updates on the project, and information about special offers, based on your stated interests.</li>
+                        <li><strong>To Process Transactions:</strong> To facilitate and manage the plot booking and purchase process, including necessary legal documentation and communication regarding payments and registration.</li>
+                        <li><strong>To Improve Our Website:</strong> To analyze usage patterns and technical data to enhance the user experience, optimize site performance, and ensure our content is effective.</li>
+                    </ul>
+                </div>
+
+                <!-- Section 3: Disclosure of Your Information -->
+                <div id="content-disclosure" class="content-panel hidden">
+                    <h3 class="text-2xl font-semibold text-ranch-primary mb-4">3. Disclosure of Your Information</h3>
+                    <p class="mb-6 text-gray-700">We do not sell your personal information to third parties for their independent marketing or promotional purposes. We may share your information with the following parties only as necessary:</p>
+                    <ul class="list-disc list-inside space-y-3 text-gray-700">
+                        <li><strong>Affiliated Companies:</strong> With companies and entities associated with USM Infra that are directly involved in the development, legal, or sales aspects of the Go Ranch Resort Project.</li>
+                        <li><strong>Service Providers:</strong> With trusted third-party vendors and agents who perform services on our behalf, such as customer relationship management (CRM) platforms, email service providers, and digital marketing agencies. These parties are contractually obligated to keep your information confidential and use it only for the purposes for which we disclose it to them.</li>
+                        <li><strong>Legal Compliance:</strong> When required by law, court order, or governmental regulation, or when we believe disclosure is necessary to protect our rights, property, or safety, or the rights, property, or safety of others.</li>
+                    </ul>
+                </div>
+
+                <!-- Section 4: Data Security -->
+                <div id="content-security" class="content-panel hidden">
+                    <h3 class="text-2xl font-semibold text-ranch-primary mb-4">4. Data Security</h3>
+                    <p class="mb-6 text-gray-700">We implement reasonable security measures designed to protect your personal information from accidental loss, unauthorized access, misuse, alteration, and disclosure.</p>
+                    <ul class="list-disc list-inside space-y-3 text-gray-700">
+                        <li>All data collected through our website is stored on secure servers behind firewalls.</li>
+                    </ul>
+                    
+                    <div class="mt-6 p-4 bg-yellow-50 border-l-4 border-yellow-400 rounded-r-lg">
+                        <h4 class="font-bold text-yellow-800 flex items-center"><span class="text-2xl mr-2">&#9888;</span> Security Disclaimer</h4>
+                        <p class="mt-2 text-yellow-700">However, no security system is impenetrable. We cannot guarantee the absolute security of our databases, nor can we guarantee that the information you supply will not be intercepted while being transmitted over the Internet. Any transmission of personal data is at your own risk.</p>
+                    </div>
+                </div>
+
+                <!-- Section 5: Your Choices and Rights -->
+                <div id="content-rights" class="content-panel hidden">
+                    <h3 class="text-2xl font-semibold text-ranch-primary mb-4">5. Your Choices and Rights</h3>
+                    <p class="mb-6 text-gray-700">You have control over your personal information:</p>
+                    <ul class="list-disc list-inside space-y-3 text-gray-700">
+                        <li><strong>Opt-Out of Marketing:</strong> You can choose to stop receiving marketing or promotional emails from us by following the unsubscribe link provided in those emails. Even if you opt out of promotional emails, we may still send you non-promotional communications, such as those related to your existing purchase or inquiry.</li>
+                        <li><strong>Cookies:</strong> Most web browsers are set to accept cookies by default. You can usually choose to set your browser to remove or reject browser cookies. Please note that removing or rejecting cookies could affect the availability and functionality of our website.</li>
+                        <li><strong>Access and Correction:</strong> You may contact us to request access to or correction of any personal information that you have provided to us.</li>
+                    </ul>
+                </div>
+
+                <!-- Section 6: Changes to Our Policy -->
+                <div id="content-changes" class="content-panel hidden">
+                    <h3 class="text-2xl font-semibold text-ranch-primary mb-4">6. Changes to Our Privacy Policy</h3>
+                    <p class="text-gray-700">We may update this policy periodically to reflect changes in our practices or relevant laws. When we make changes, we will post the revised policy on this page with a new "Effective Date." We encourage you to review this policy whenever you access our site to stay informed about our data handling practices.</p>
+                </div>
+
+                <!-- Section 7: Contact Information -->
+                <div id="content-contact" class="content-panel hidden">
+                    <h3 class="text-2xl font-semibold text-ranch-primary mb-4">7. Contact Information</h3>
+                    <p class="mb-6 text-gray-700">If you have questions or comments about this Privacy Policy or our privacy practices, please contact us at:</p>
+                    <div class="bg-slate-100 p-4 rounded-lg">
+                        <p class="font-semibold text-slate-800">[Insert Company Contact Email, e.g., info@warrangal-highway.homes]</p>
+                        <p class="mt-2 font-semibold text-slate-800">[Insert Company Phone Number]</p>
+                        <p class="mt-2 font-semibold text-slate-800">[Insert Company Mailing Address]</p>
+                    </div>
+                </div>
+
+            </main>
+        </div>
+
+        <footer class="mt-8 text-center">
+            <p class="text-sm text-slate-500">Effective Date: November 6, 2025.</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navButtons = document.querySelectorAll('.nav-button');
+            const contentPanels = document.querySelectorAll('.content-panel');
+
+            navButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const targetId = button.getAttribute('data-target');
+
+                    // 1. Update Nav Button Active State
+                    navButtons.forEach(btn => {
+                        btn.classList.remove('active');
+                    });
+                    button.classList.add('active');
+
+                    // 2. Show/Hide Content Panels
+                    contentPanels.forEach(panel => {
+                        if (panel.id === targetId) {
+                            panel.classList.remove('hidden');
+                        } else {
+                            panel.classList.add('hidden');
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

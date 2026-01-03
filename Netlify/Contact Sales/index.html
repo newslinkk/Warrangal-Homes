@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bilingual Contact Form | Go-Ranch</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#4f46e5',
+                        'primary-dark': '#4338ca',
+                        'hinglish': '#64748b',
+                        'ranch-primary': '#004d40', 
+                        'ranch-accent': '#FFC107',
+                        'ranch-light': '#E0F2F1',
+                        'ranch-dark': '#00251A',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        .nav-link {
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #FFC107;
+        }
+        .dropdown-group:hover .dropdown-menu {
+            display: block;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col">
+
+    <!-- HEADER & NAVIGATION -->
+    <header id="main-header" class="fixed top-0 left-0 w-full z-50 bg-ranch-dark py-4 text-white shadow-lg">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+            <div class="flex items-center gap-2 group cursor-pointer">
+                <div class="w-10 h-10 bg-ranch-accent rounded-lg flex items-center justify-center rotate-3 group-hover:rotate-0 transition-transform duration-300">
+                    <i data-lucide="tree-pine" class="text-ranch-dark w-6 h-6"></i>
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-xl font-black tracking-tighter leading-none text-white group-hover:text-ranch-accent transition-colors">GO-RANCH</span>
+                    <span class="text-[10px] uppercase tracking-widest text-ranch-accent font-bold">Resorts & Estates</span>
+                </div>
+            </div>
+            
+            <div class="hidden lg:flex items-center gap-6 text-sm font-semibold">
+                <a href="#" class="nav-link">Home</a>
+                <div class="relative dropdown-group">
+                    <button class="nav-link flex items-center gap-1">
+                        <a href="Plot & Pricing" class="nav-link">Plots & Pricing</a><i data-lucide="chevron-down" class="w-4 h-4 opacity-50"></i>
+                    </button>
+                    <div class="dropdown-menu absolute top-full left-0 mt-2 w-48 bg-white text-ranch-dark shadow-2xl rounded-xl overflow-hidden border border-gray-100 hidden">
+                        <a href="https://drive.google.com/file/d/1egb9KKyDC_KutAKTaDA79ABvLZPkRoz0/view" target="_blank" class="flex items-center gap-3 px-4 py-3 hover:bg-ranch-light transition border-b border-gray-50">
+                            <i data-lucide="map" class="w-4 h-4 text-ranch-primary"></i> View Pricing
+                        </a>
+                    </div>
+                </div>
+                <a href="Sandalwood Plantation" class="nav-link">Sandalwood Plantation</a>
+                <a href="Resort & Cottages" class="nav-link">Resort & Cottages</a>
+                <a href="Ask AI" class="nav-link">Ask AI</a>
+                <a href="FAQ's" class="nav-link">FAQ's</a>
+                <a href="Customer Support App" class="nav-link">Customer Support App</a>
+                <a href="Other Projects" class="nav-link">Other Projects</a>
+                <a href="Contact Sales" class="nav-link">Contact Sales</a>
+                <div class="flex items-center gap-3 ml-4">
+                    <a href="Book Site Visit" class="px-5 py-2 border border-ranch-accent text-ranch-accent rounded-full font-bold hover:bg-ranch-accent hover:text-ranch-dark transition-all shadow-sm">Book Site Visit</a>
+                </div>
+            </div>
+
+            <button class="lg:hidden text-white" id="mobile-menu-btn">
+                <i data-lucide="menu" class="w-8 h-8"></i>
+            </button>
+        </nav>
+    </header>
+    
+    <!-- MOBILE-FIRST APP HEADER SECTION -->
+    <section class="bg-ranch-primary py-10 text-center text-white shadow-xl mt-16">
+        <div class="container mx-auto px-4">
+            <!-- 3 line spaces -->
+            <div class="h-6"></div>
+            <div class="h-6"></div>
+            <div class="h-6"></div>
+            
+            <div class="w-20 h-20 mx-auto mb-4 bg-ranch-accent rounded-2xl flex items-center justify-center shadow-lg">
+                <i data-lucide="smartphone" class="w-10 h-10 text-ranch-dark"></i>
+            </div>
+            <h1 class="text-3xl font-extrabold text-white mb-1">Your Go-Ranch Digital Hub</h1>
+            <p class="text-lg font-light text-ranch-light max-w-sm mx-auto">The **USM My City Customer App** is your gateway to managing your investment and lifestyle.</p>
+        </div>
+    </section>
+
+    <!-- MAIN FORM SECTION -->
+    <div class="flex flex-col items-center justify-center p-4">
+        <div class="w-full max-w-lg bg-white p-6 sm:p-8 rounded-xl shadow-2xl border border-gray-200 my-8">
+            <h1 class="text-3xl font-bold text-gray-900 mb-2">
+                Get In Touch <span class="text-primary-dark font-normal">/</span> <span class="text-hinglish font-medium">Humse Contact Karein</span>
+            </h1>
+            <p class="text-sm mb-6">
+                <span class="text-gray-600 block">Send us your inquiry and we'll get back to you promptly.</span>
+                <span class="text-hinglish italic block">Apni inquiry bhejein aur hum aapko jaldi reply karenge.</span>
+            </p>
+            
+            <form action="https://api.web3forms.com/submit" method="POST" class="space-y-5">
+                <input type="hidden" name="access_key" value="363c16d0-baa5-48b2-8c63-a7a8a59a7c61">
+
+                <div>
+                    <label for="name" class="block text-sm font-semibold mb-1">
+                        <span class="text-primary">Full Name</span> 
+                        <span class="text-hinglish ml-1 font-normal">— Pura Naam</span>
+                    </label>
+                    <input type="text" id="name" name="client_name" required placeholder="Enter your name / Apna naam likhein" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary outline-none transition duration-150">
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label for="email" class="block text-sm font-semibold mb-1">
+                            <span class="text-primary">Email Id</span>
+                            <span class="text-hinglish ml-1 font-normal">— Email</span>
+                        </label>
+                        <input type="email" id="email" name="client_email" required placeholder="example@mail.com" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary outline-none transition duration-150">
+                    </div>
+                    <div>
+                        <label for="mobile" class="block text-sm font-semibold mb-1">
+                            <span class="text-primary">Mobile Number</span>
+                            <span class="text-hinglish ml-1 font-normal">— Phone</span>
+                        </label>
+                        <input type="tel" id="mobile" name="client_mobile" required placeholder="+91 XXXXX XXXXX" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary outline-none transition duration-150">
+                    </div>
+                </div>
+
+                <div>
+                    <label for="project" class="block text-sm font-semibold mb-1">
+                        <span class="text-primary">Choose Project</span>
+                        <span class="text-hinglish ml-1 font-normal">— Project Select Karein</span>
+                    </label>
+                    <select id="project" name="project_choice" required onchange="updatePlotSizes()" class="w-full px-4 py-2 border border-gray-300 bg-white rounded-lg focus:ring-primary focus:border-primary outline-none transition duration-150">
+                        <option value="">Select a project / Project choose karein...</option>
+                        <option value="Go Ranch">Go Ranch</option>
+                        <option value="Go Valley">Go Valley</option>
+                        <option value="Nature Bliss">Nature Bliss</option>
+                        <option value="Rush Green">Rush Green</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="plot_size" class="block text-sm font-semibold mb-1">
+                        <span class="text-primary">Plot Size</span>
+                        <span class="text-hinglish ml-1 font-normal">— Plot Ka Size</span>
+                    </label>
+                    <select id="plot_size" name="preferred_plot_size" required class="w-full px-4 py-2 border border-gray-300 bg-white rounded-lg focus:ring-primary focus:border-primary outline-none transition duration-150">
+                        <option value="">Please select a project first / Pehle project select karein...</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="subject" class="block text-sm font-semibold mb-1">
+                        <span class="text-primary">Inquiry Type</span>
+                        <span class="text-hinglish ml-1 font-normal">— Inquiry Kis Baare Mein Hai?</span>
+                    </label>
+                    <select id="subject" name="subject" required class="w-full px-4 py-2 border border-gray-300 bg-white rounded-lg focus:ring-primary focus:border-primary outline-none transition duration-150">
+                        <option value="">Select Inquiry Type / Type Select Karein...</option>
+                        <option value="General Inquiry">General Inquiry / Aam Sawal</option>
+                        <option value="Site Visit Request">Site Visit Request / Site Dekhna Hai</option>
+                        <option value="Pricing and Brochure">Pricing & Brochure / Price List Chahiye</option>
+                        <option value="Booking Information">Booking Information / Booking Ki Jaankari</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="message" class="block text-sm font-semibold mb-1">
+                        <span class="text-primary">Your Message</span>
+                        <span class="text-hinglish ml-1 font-normal">— Aapka Message</span>
+                    </label>
+                    <textarea id="message" name="client_message" rows="3" required placeholder="How can we help? / Apni requirement yahan likhein..." class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary outline-none transition duration-150"></textarea>
+                </div>
+                
+                <div class="pt-2">
+                    <button type="submit" class="w-full bg-primary hover:bg-primary-dark text-white font-bold py-3 rounded-lg shadow-md transition duration-200 transform hover:scale-[1.01] focus:outline-none focus:ring-4 focus:ring-primary/50">
+                        Submit Inquiry / Bhejein
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+
+        const plotData = {
+            "Go Ranch": [
+                "120 Sq. Yards", "193 Sq. Yards", "195 Sq. Yards", "208 Sq. Yards", "220 Sq. Yards", 
+                "240 Sq. Yards", "241 Sq. Yards", "242 Sq. Yards", "251 Sq. Yards", "257 Sq. Yards", 
+                "270 Sq. Yards", "272 Sq. Yards", "286 Sq. Yards", "291 Sq. Yards", "300 Sq. Yards", 
+                "304 Sq. Yards", "306 Sq. Yards", "312 Sq. Yards", "314 Sq. Yards", "332 Sq. Yards", 
+                "338 Sq. Yards", "355 Sq. Yards", "382 Sq. Yards", "398 Sq. Yards", "400 Sq. Yards", 
+                "401 Sq. Yards", "410 Sq. Yards", "426 Sq. Yards", "436 Sq. Yards", "443 Sq. Yards", 
+                "444 Sq. Yards", "452 Sq. Yards", "455 Sq. Yards", "460 Sq. Yards", "586 Sq. Yards", "694 Sq. Yards"
+            ],
+            "Go Valley": ["120 Sq. Yards", "240 Sq. Yards", "400 Sq. Yards"],
+            "Rush Green": [
+                "156 Sq. Yards", "167 Sq. Yards", "187 Sq. Yards", "200 Sq. Yards", "222 Sq. Yards", 
+                "233 Sq. Yards", "267 Sq. Yards", "300 Sq. Yards", "333 Sq. Yards", "400 Sq. Yards"
+            ],
+            "Nature Bliss": ["120 Sq. Yards", "240 Sq. Yards"]
+        };
+
+        function updatePlotSizes() {
+            const projectSelect = document.getElementById('project');
+            const plotSelect = document.getElementById('plot_size');
+            const selectedProject = projectSelect.value;
+
+            plotSelect.innerHTML = '';
+
+            if (selectedProject && plotData[selectedProject]) {
+                const defaultOption = document.createElement('option');
+                defaultOption.value = "";
+                defaultOption.textContent = "Select Size / Size Select Karein...";
+                plotSelect.appendChild(defaultOption);
+
+                plotData[selectedProject].forEach(size => {
+                    const option = document.createElement('option');
+                    option.value = size;
+                    option.textContent = size;
+                    plotSelect.appendChild(option);
+                });
+            } else {
+                const option = document.createElement('option');
+                option.value = "";
+                option.textContent = "Select a project first / Pehle project select karein...";
+                plotSelect.appendChild(option);
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USM Projects | Premium Sandalwood Investments</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Load Lucide Icons for the new navigation -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap');
+        
+        :root {
+            --primary-teal: #004d40;
+            --accent-amber: #ffc107;
+            /* Map the new color classes to the existing theme variables */
+            --ranch-primary: #004d40;
+            --ranch-accent: #ffc107;
+            --ranch-dark: #00251A;
+            --ranch-light: #E0F2F1;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        /* Map custom classes used in the new code */
+        .bg-ranch-dark { background-color: var(--ranch-dark); }
+        .bg-ranch-primary { background-color: var(--ranch-primary); }
+        .bg-ranch-accent { background-color: var(--ranch-accent); }
+        .text-ranch-accent { color: var(--ranch-accent); }
+        .text-ranch-dark { color: var(--ranch-dark); }
+        .text-ranch-light { color: var(--ranch-light); }
+        .border-ranch-accent { border-color: var(--ranch-accent); }
+        .hover\:bg-ranch-accent:hover { background-color: var(--ranch-accent); }
+        .hover\:text-ranch-dark:hover { color: var(--ranch-dark); }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(0, 77, 64, 0.94) 0%, rgba(0, 77, 64, 0.75) 100%), url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=80&w=2000');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .bg-custom-teal { background-color: var(--primary-teal); }
+        .text-custom-teal { color: var(--primary-teal); }
+        .bg-custom-amber { background-color: var(--accent-amber); }
+        .text-custom-amber { color: var(--accent-amber); }
+
+        .btn-primary {
+            background-color: var(--accent-amber);
+            color: var(--primary-teal);
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .btn-primary:hover {
+            background-color: #e6af06;
+            transform: translateY(-2px);
+        }
+
+        /* Navigation Styles */
+        .nav-link {
+            transition: all 0.2s ease;
+            color: white;
+        }
+        .nav-link:hover {
+            color: var(--ranch-accent);
+        }
+
+        /* Dropdown Menu Visibility */
+        .dropdown-group:hover .dropdown-menu {
+            display: block;
+        }
+        .dropdown-menu {
+            display: none;
+        }
+
+        .project-card-zoom:hover img {
+            transform: scale(1.05);
+        }
+
+        /* AI Section Typing Animation */
+        .typing-dot {
+            width: 6px;
+            height: 6px;
+            background: var(--accent-amber);
+            border-radius: 50%;
+            animation: bounce 1.4s infinite ease-in-out both;
+        }
+        .typing-dot:nth-child(1) { animation-delay: -0.32s; }
+        .typing-dot:nth-child(2) { animation-delay: -0.16s; }
+
+        @keyframes bounce {
+            0%, 80%, 100% { transform: scale(0); }
+            40% { transform: scale(1.0); }
+        }
+
+        .ai-glow {
+            box-shadow: 0 0 20px rgba(255, 193, 7, 0.2);
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <!-- HEADER & NAVIGATION -->
+    <header id="main-header" class="fixed top-0 left-0 w-full z-50 bg-ranch-dark py-4 text-white shadow-lg">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+            <div class="flex items-center gap-2 group cursor-pointer">
+                <div class="w-10 h-10 bg-ranch-accent rounded-lg flex items-center justify-center rotate-3 group-hover:rotate-0 transition-transform duration-300">
+                    <i data-lucide="tree-pine" class="text-ranch-dark w-6 h-6"></i>
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-xl font-black tracking-tighter leading-none text-white group-hover:text-ranch-accent transition-colors">GO-RANCH</span>
+                    <span class="text-[10px] uppercase tracking-widest text-ranch-accent font-bold">Resorts & Estates</span>
+                </div>
+            </div>
+            
+            <div class="hidden lg:flex items-center gap-6 text-sm font-semibold">
+                <a href="#" class="nav-link">Home</a>
+                <div class="relative dropdown-group">
+                    <button class="nav-link flex items-center gap-1">
+                        <span class="nav-link">Plots & Pricing</span><i data-lucide="chevron-down" class="w-4 h-4 opacity-50"></i>
+                    </button>
+                    <div class="dropdown-menu absolute top-full left-0 mt-2 w-48 bg-white text-ranch-dark shadow-2xl rounded-xl overflow-hidden border border-gray-100">
+                        <a href="https://drive.google.com/file/d/1egb9KKyDC_KutAKTaDA79ABvLZPkRoz0/view" target="_blank" class="flex items-center gap-3 px-4 py-3 hover:bg-ranch-light transition border-b border-gray-50 text-ranch-dark">
+                            <i data-lucide="map" class="w-4 h-4 text-ranch-primary"></i> View Pricing
+                        </a>
+                    </div>
+                </div>
+                <a href="#projects" class="nav-link">Sandalwood Plantation</a>
+                <a href="#" class="nav-link">Resort & Cottages</a>
+                <a href="#ai-assistant" class="nav-link">Ask AI</a>
+                <a href="#" class="nav-link">FAQ's</a>
+                <a href="#" class="nav-link">Customer Support App</a>
+                <a href="#" class="nav-link">Other Projects</a>
+                <a href="#" class="nav-link">Contact Sales</a>
+                <div class="flex items-center gap-3 ml-4">
+                    <a href="tel:+919652599374" class="px-5 py-2 border border-ranch-accent text-ranch-accent rounded-full font-bold hover:bg-ranch-accent hover:text-ranch-dark transition-all shadow-sm">Book Site Visit</a>
+                </div>
+            </div>
+
+            <button class="lg:hidden text-white" id="mobile-menu-btn">
+                <i data-lucide="menu" class="w-8 h-8"></i>
+            </button>
+        </nav>
+    </header>
+    
+    <!-- MOBILE-FIRST APP HEADER SECTION -->
+    <section class="bg-ranch-primary py-10 text-center text-white shadow-xl mt-16">
+        <div class="container mx-auto px-4">
+            <!-- 3 line spaces added here -->
+            <div class="h-6"></div>
+            <div class="h-6"></div>
+            <div class="h-6"></div>
+            
+            <div class="w-20 h-20 mx-auto mb-4 bg-ranch-accent rounded-2xl flex items-center justify-center shadow-lg">
+                <i data-lucide="smartphone" class="w-10 h-10 text-ranch-dark"></i>
+            </div>
+            <h1 class="text-3xl font-extrabold text-white mb-1">Your Go-Ranch Digital Hub</h1>
+            <p class="text-lg font-light text-ranch-light max-w-sm mx-auto">The **USM My City Customer App** is your gateway to managing your investment and lifestyle.</p>
+        </div>
+    </section>
+
+    <!-- Hero Section -->
+    <header class="relative min-h-[60vh] md:min-h-[70vh] flex items-center justify-center hero-gradient py-12">
+        <div class="max-w-7xl mx-auto px-4 text-center text-white">
+            <h1 class="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">Invest in <span class="text-custom-amber">Green Gold</span></h1>
+            <p class="text-base md:text-xl mb-8 text-slate-200 max-w-2xl mx-auto">Secure your future with Sandalwood plantations and DTCP approved plots in Hyderabad's fastest-growing corridors.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-3">
+                <a href="https://drive.google.com/file/d/1C3Yx0D7JzKpUgDLvPQ4Xfbx9O5Wo6pBQ/view?usp=sharing" class="bg-custom-amber text-custom-teal px-6 py-3 rounded-xl font-bold text-base shadow-xl hover:bg-amber-400 transition flex items-center justify-center">
+                    <i class="fas fa-file-download mr-2"></i> Download Brochure
+                </a>
+                <a href="https://drive.google.com/file/d/1K2TamJDIh85-M-8BcaV5S8fdV-3_tTFY/view?usp=sharing" class="bg-white/10 backdrop-blur-md text-white border border-white/20 px-6 py-3 rounded-xl font-bold text-base shadow-xl hover:bg-white/20 transition">Price Listing</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- AI Interactive Concierge Section -->
+    <section id="ai-assistant" class="py-16 bg-slate-900 relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+            <div class="absolute top-10 right-10 w-64 h-64 bg-custom-amber rounded-full blur-[120px]"></div>
+            <div class="absolute bottom-10 left-10 w-64 h-64 bg-custom-teal rounded-full blur-[120px]"></div>
+        </div>
+
+        <div class="max-w-5xl mx-auto px-4 relative z-10">
+            <div class="text-center mb-10">
+                <span class="inline-block px-3 py-1 bg-custom-amber/20 text-custom-amber rounded-full text-[10px] font-bold uppercase tracking-widest mb-3">Smart Assistant</span>
+                <h2 class="text-3xl font-bold text-white mb-3">USM AI Intelligence ✨</h2>
+                <p class="text-slate-400 max-w-xl mx-auto text-sm">Get instant answers about Profits, Location, and Amenities.</p>
+            </div>
+
+            <div class="bg-slate-800/50 backdrop-blur-xl rounded-[2rem] border border-white/10 p-6 md:p-8 ai-glow">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    <!-- Suggested Questions -->
+                    <div class="lg:col-span-1 space-y-2">
+                        <p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-3">Quick Questions:</p>
+                        <button onclick="askAI('What is the expected profit from Sandalwood investment?')" class="w-full text-left p-2.5 bg-white/5 hover:bg-white/10 rounded-lg border border-white/5 transition text-slate-300 text-xs">
+                            Sandalwood Profit? 💰
+                        </button>
+                        <button onclick="askAI('What are the benefits of the Go Ranch project?')" class="w-full text-left p-2.5 bg-white/5 hover:bg-white/10 rounded-lg border border-white/5 transition text-slate-300 text-xs">
+                            Go Ranch Details 🐄
+                        </button>
+                        <button onclick="askAI('Tell me about project locations and surrounding growth.')" class="w-full text-left p-2.5 bg-white/5 hover:bg-white/10 rounded-lg border border-white/5 transition text-slate-300 text-xs">
+                            Location & Growth 📍
+                        </button>
+                        <button onclick="askAI('How can I book a site visit?')" class="w-full text-left p-2.5 bg-white/5 hover:bg-white/10 rounded-lg border border-white/5 transition text-slate-300 text-xs">
+                            Site Visit Process 🚗
+                        </button>
+                    </div>
+
+                    <!-- Chat Interface -->
+                    <div class="lg:col-span-2 flex flex-col h-[400px]">
+                        <div id="ai-chat-box" class="flex-1 overflow-y-auto space-y-3 mb-3 pr-2 custom-scrollbar">
+                            <div class="bg-white/5 text-slate-300 p-3.5 rounded-2xl rounded-tl-none border border-white/5 text-xs leading-relaxed">
+                                Hello! I am your USM AI assistant. Ask me anything about Go Ranch, Go Valley, or our other premium projects.
+                            </div>
+                        </div>
+                        
+                        <div class="relative">
+                            <input id="ai-input" type="text" placeholder="Type your question..." class="w-full bg-slate-900 border border-white/10 rounded-xl px-4 py-3 text-white text-sm outline-none focus:border-custom-amber transition pr-12">
+                            <button onclick="sendUserMsg()" class="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-custom-amber text-custom-teal rounded-lg flex items-center justify-center hover:bg-amber-400 transition">
+                                <i class="fas fa-paper-plane text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Portfolio -->
+    <section id="projects" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-3 text-custom-teal uppercase tracking-tight">Ongoing Projects</h2>
+                <div class="w-16 h-1 bg-custom-amber mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Go Ranch -->
+                <div class="project-card-zoom group">
+                    <div class="relative min-h-[500px] overflow-hidden rounded-[2.5rem] shadow-xl">
+                        <img src="https://fusion.goranchresort.com//assets/images/gallery/camping-tents-at-goranch-resort17.jpg" class="absolute inset-0 w-full h-full object-cover transition duration-700" alt="Go Ranch" onerror="this.src='https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=800'">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent p-8 flex flex-col justify-end">
+                            <div class="mb-4">
+                                <span class="bg-custom-amber text-custom-teal text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest">Flagship</span>
+                            </div>
+                            <h3 class="text-white text-2xl font-bold mb-2">Go Ranch</h3>
+                            <p class="text-slate-200 text-xs mb-6">Luxury farm life blend with sandalwood wealth. Resort membership included.</p>
+                            
+                            <div class="grid grid-cols-1 gap-3 mb-4">
+                                <a href="https://drive.google.com/file/d/1PO4gCNTtOMaPy0jFz7CTXVoL7-kgpIrv/view?usp=sharing" target="_blank" class="bg-custom-amber text-custom-teal py-3 px-4 rounded-xl font-bold text-center text-xs shadow-lg hover:bg-amber-400 flex items-center justify-center gap-2">
+                                    <i class="fas fa-file-download"></i> Download Brochure
+                                </a>
+                                <a href="https://www.warrangal-highway.homes/plots-pricing" target="_blank" class="bg-white/20 backdrop-blur-md text-white py-3 px-4 rounded-xl font-bold text-center text-xs border border-white/30 hover:bg-white/30 flex items-center justify-center gap-2">
+                                    <i class="fas fa-tags"></i> Price Listing
+                                </a>
+                            </div>
+                            <div class="flex items-center text-custom-amber font-bold text-[10px] uppercase tracking-widest">
+                                <i class="fas fa-map-marker-alt mr-2"></i> Near Warangal Highway
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Go Valley -->
+                <div class="project-card-zoom group">
+                    <div class="relative min-h-[500px] overflow-hidden rounded-[2.5rem] shadow-xl border-t-8 border-custom-teal">
+                        <img src="https://usminfra.com/public/uploads/images/5f5bfd27839f93e29d3871d70e758726.jpg" class="absolute inset-0 w-full h-full object-cover transition duration-700" alt="Go Valley" onerror="this.src='https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=800'">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent p-8 flex flex-col justify-end">
+                             <div class="mb-4">
+                                <span class="bg-emerald-500 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest">DTCP Approved</span>
+                            </div>
+                            <h3 class="text-white text-2xl font-bold mb-2">Go Valley</h3>
+                            <p class="text-slate-200 text-xs mb-6">DTCP approved residential layouts with high-yield Sandalwood plantation.</p>
+                            
+                            <div class="grid grid-cols-1 gap-3 mb-4">
+                                <a href="https://drive.google.com/file/d/1YgbWXiVXt5KShiHzFHJoDmRkJDFAi3Mg/view?usp=sharing" target="_blank" class="bg-custom-amber text-custom-teal py-3 px-4 rounded-xl font-bold text-center text-xs shadow-lg flex items-center justify-center gap-2">
+                                    <i class="fas fa-file-download"></i> Download Brochure
+                                </a>
+                                <a href="https://drive.google.com/file/d/15I6EyGpL5ExBoZIdq6S-EtH7PeYU8x2R/view?usp=sharing" target="_blank" class="bg-white/20 backdrop-blur-md text-white py-3 px-4 rounded-xl font-bold text-center text-xs border border-white/30 flex items-center justify-center gap-2">
+                                    <i class="fas fa-tags"></i> Price Listing
+                                </a>
+                            </div>
+                            <div class="flex items-center text-custom-amber font-bold text-[10px] uppercase tracking-widest">
+                                <i class="fas fa-map-marker-alt mr-2"></i> Salvapur / Warangal Highway
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rush Green -->
+                <div class="project-card-zoom group">
+                    <div class="relative min-h-[500px] overflow-hidden rounded-[2.5rem] shadow-xl">
+                        <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=80&w=800" class="absolute inset-0 w-full h-full object-cover transition duration-700" alt="Rush Green">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent p-8 flex flex-col justify-end">
+                            <div class="mb-4">
+                                <span class="bg-blue-500 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest">Hot Deal</span>
+                            </div>
+                            <h3 class="text-white text-2xl font-bold mb-2">Rush Green</h3>
+                            <p class="text-slate-200 text-xs mb-6">A premium development in Khammam featuring high-density sandalwood cultivation.</p>
+                            
+                            <div class="grid grid-cols-1 gap-3 mb-4">
+                                <a href="https://drive.google.com/file/d/1GZymR6G7_f70IvwOxQJkhft5TivTyqjz/view?usp=sharing" target="_blank" class="bg-custom-amber text-custom-teal py-3 px-4 rounded-xl font-bold text-center text-xs shadow-lg flex items-center justify-center gap-2">
+                                    <i class="fas fa-file-download"></i> Download Brochure
+                                </a>
+                                <a href="https://drive.google.com/file/d/1Pp_QOqhVDsxmeOIZeTIh80Ckm9J2WZfi/view?usp=sharing" target="_blank" class="bg-white/20 backdrop-blur-md text-white py-3 px-4 rounded-xl font-bold text-center text-xs border border-white/30 flex items-center justify-center gap-2">
+                                    <i class="fas fa-tags"></i> Price Listing
+                                </a>
+                            </div>
+                            <div class="flex items-center text-custom-amber font-bold text-[10px] uppercase tracking-widest">
+                                <i class="fas fa-map-marker-alt mr-2"></i> Khammam District
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investment Guide -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-3 text-custom-teal uppercase">Investment Guide</h2>
+                <div class="w-16 h-1 bg-custom-amber mx-auto rounded-full mb-4"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-slate-50 p-6 rounded-[1.5rem] border border-slate-100">
+                    <div class="w-10 h-10 bg-custom-teal text-custom-amber rounded-lg flex items-center justify-center mb-4 text-lg">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-3">Why Us?</h3>
+                    <ul class="space-y-2 text-slate-600 text-xs">
+                        <li>High return "Green Gold" model.</li>
+                        <li>100% Legal Transparency.</li>
+                        <li>Growth Corridor locations.</li>
+                    </ul>
+                </div>
+
+                <div class="bg-slate-50 p-6 rounded-[1.5rem] border border-slate-100">
+                    <div class="w-10 h-10 bg-custom-teal text-custom-amber rounded-lg flex items-center justify-center mb-4 text-lg">
+                        <i class="fas fa-swimming-pool"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-3">Amenities</h3>
+                    <ul class="space-y-2 text-slate-600 text-xs">
+                        <li>Resort & Club House Access.</li>
+                        <li>Organic Farming & Dairy.</li>
+                        <li>40ft/30ft BT Roads & Security.</li>
+                    </ul>
+                </div>
+
+                <div class="bg-slate-50 p-6 rounded-[1.5rem] border border-slate-100">
+                    <div class="w-10 h-10 bg-custom-teal text-custom-amber rounded-lg flex items-center justify-center mb-4 text-lg">
+                        <i class="fas fa-coins"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-3">Valuation</h3>
+                    <div class="space-y-3">
+                        <div class="p-2.5 bg-white rounded-lg shadow-sm">
+                            <p class="text-[9px] font-bold text-slate-400 uppercase">Estimated Return (15 Yrs)</p>
+                            <p class="text-base font-bold text-custom-teal">₹1.5Cr - ₹2Cr+</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 py-12 text-center border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 text-slate-500 text-[10px] space-y-4">
+            <div class="flex justify-center space-x-6 mb-4">
+                <a href="#" class="hover:text-custom-amber transition text-lg"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="hover:text-custom-amber transition text-lg"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="hover:text-custom-amber transition text-lg"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <p>&copy; 2025 USM Infrastructures Pvt. Ltd. | Trusted Real Estate Partners</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp -->
+    <a href="https://wa.me/919652599374" target="_blank" class="fixed bottom-4 right-4 w-12 h-12 bg-emerald-500 text-white rounded-full shadow-2xl flex items-center justify-center text-2xl z-50">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        const apiKey = ""; 
+
+        async function fetchAIResponse(query, retries = 5, delay = 1000) {
+            const systemPrompt = `You are a professional Real Estate Consultant for USM INFRA. 
+                Projects: 
+                1. Go Ranch - Premium Farmhouse lifestyle with Sandalwood, Resort features.
+                2. Nature Bliss - Prime Sandalwood.
+                3. Go Valley - DTCP & Sandalwood.
+                4. Rush Greens - Khammam.
+                Focus: Sandalwood returns, Plot appreciation, Resort facilities.
+                Respond in professional English. Max 3 sentences. Contact: +91 96525 99374.`;
+
+            try {
+                const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        contents: [{ parts: [{ text: query }] }],
+                        systemInstruction: { parts: [{ text: systemPrompt }] }
+                    })
+                });
+
+                if (!response.ok) throw new Error("API Limit");
+                const data = await response.json();
+                return data.candidates?.[0]?.content?.parts?.[0]?.text || "Please call +91 96525 99374 for assistance.";
+            } catch (error) {
+                if (retries > 0) {
+                    await new Promise(r => setTimeout(r, delay));
+                    return fetchAIResponse(query, retries - 1, delay * 2);
+                }
+                return "Connecting... Please call us at +91 96525 99374.";
+            }
+        }
+
+        async function askAI(query) {
+            const chatBox = document.getElementById('ai-chat-box');
+            
+            // Add User Message
+            const userMsg = document.createElement('div');
+            userMsg.className = "bg-custom-amber text-custom-teal p-3 rounded-2xl rounded-tr-none ml-auto max-w-[80%] text-xs font-bold shadow-lg mb-2";
+            userMsg.innerText = query;
+            chatBox.appendChild(userMsg);
+            chatBox.scrollTop = chatBox.scrollHeight;
+
+            // Loading
+            const loadMsg = document.createElement('div');
+            loadMsg.id = "ai-loading";
+            loadMsg.className = "flex space-x-2 bg-white/5 p-3 rounded-2xl rounded-tl-none w-16 mb-2";
+            loadMsg.innerHTML = '<div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div>';
+            chatBox.appendChild(loadMsg);
+            chatBox.scrollTop = chatBox.scrollHeight;
+
+            try {
+                const aiResponse = await fetchAIResponse(query);
+                const loader = document.getElementById('ai-loading');
+                if (loader) loader.remove();
+
+                const aiMsg = document.createElement('div');
+                aiMsg.className = "bg-white/5 text-slate-200 p-4 rounded-2xl rounded-tl-none border border-white/5 text-xs leading-relaxed max-w-[90%] mb-2";
+                aiMsg.innerHTML = aiResponse.replace(/\n/g, '<br>');
+                chatBox.appendChild(aiMsg);
+                chatBox.scrollTop = chatBox.scrollHeight;
+            } catch (e) {
+                document.getElementById('ai-loading')?.remove();
+            }
+        }
+
+        function sendUserMsg() {
+            const input = document.getElementById('ai-input');
+            if (input.value.trim()) {
+                askAI(input.value);
+                input.value = "";
+            }
+        }
+
+        document.getElementById('ai-input').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') sendUserMsg();
+        });
+
+        // Simple Mobile Menu Toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+             // Logic for mobile sidebar could be implemented here
+             console.log("Mobile menu toggled");
+        });
+    </script>
+</body>
+</html>
