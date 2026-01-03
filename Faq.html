@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- SEO Optimization for FAQ Page -->
+    <title>FAQ | Frequently Asked Questions about Go-Ranch Plots, Sandalwood & Resort</title>
+    <meta name="description" content="Find answers to common questions about Go-Ranch's DTCP plots, sandalwood investment returns, free resort membership benefits, project location, and security measures.">
+    <meta name="keywords" content="Go-Ranch FAQ, sandalwood profit share, DTCP approval, project location, resort membership cost, sandalwood security, plot investment questions">
+    
+    <!-- Custom Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'ranch-primary': '#004d40', // Deep Forest Green/Teal
+                        'ranch-accent': '#FFC107',  // Gold/Amber
+                        'ranch-light': '#E0F2F1',
+                        'ranch-dark': '#00251A',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+
+        function toggleAccordion(button) {
+            const item = button.closest('.accordion-item');
+            const content = item.querySelector('.accordion-content');
+            const icon = button.querySelector('[data-lucide="chevron-down"]');
+
+            const isOpen = content.classList.contains('open');
+
+            document.querySelectorAll('.accordion-content.open').forEach(openContent => {
+                if (openContent !== content) {
+                    openContent.classList.remove('open');
+                    openContent.style.maxHeight = '0';
+                    const otherIcon = openContent.previousElementSibling.querySelector('[data-lucide="chevron-down"]');
+                    if(otherIcon) otherIcon.classList.remove('rotate-180');
+                }
+            });
+
+            if (isOpen) {
+                content.classList.remove('open');
+                content.style.maxHeight = '0';
+                icon.classList.remove('rotate-180');
+            } else {
+                content.classList.add('open');
+                content.style.maxHeight = content.scrollHeight + 'px';
+                icon.classList.add('rotate-180');
+            }
+        }
+    </script>
+    <style>
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-in-out;
+        }
+        .dropdown-group:hover .dropdown-menu {
+            display: block;
+        }
+        .dropdown-menu {
+            display: none;
+        }
+        .nav-link {
+            transition: all 0.2s ease;
+        }
+        .nav-link:hover {
+            color: #FFC107;
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50 text-ranch-dark">
+
+    <!-- HEADER & NAVIGATION -->
+    <header id="main-header" class="fixed top-0 left-0 w-full z-50 bg-ranch-dark py-4 text-white shadow-lg">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+            <div class="flex items-center gap-2 group cursor-pointer">
+                <div class="w-10 h-10 bg-ranch-accent rounded-lg flex items-center justify-center rotate-3 group-hover:rotate-0 transition-transform duration-300">
+                    <i data-lucide="tree-pine" class="text-ranch-dark w-6 h-6"></i>
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-xl font-black tracking-tighter leading-none text-white group-hover:text-ranch-accent transition-colors">GO-RANCH</span>
+                    <span class="text-[10px] uppercase tracking-widest text-ranch-accent font-bold">Resorts & Estates</span>
+                </div>
+            </div>
+            
+            <div class="hidden lg:flex items-center gap-6 text-sm font-semibold">
+                <a href="#" class="nav-link">Home</a>
+                <div class="relative dropdown-group">
+                    <button class="nav-link flex items-center gap-1">
+                        <span class="nav-link">Plots & Pricing</span><i data-lucide="chevron-down" class="w-4 h-4 opacity-50"></i>
+                    </button>
+                    <div class="dropdown-menu absolute top-full left-0 mt-2 w-48 bg-white text-ranch-dark shadow-2xl rounded-xl overflow-hidden border border-gray-100">
+                        <a href="https://drive.google.com/file/d/1egb9KKyDC_KutAKTaDA79ABvLZPkRoz0/view" target="_blank" class="flex items-center gap-3 px-4 py-3 hover:bg-ranch-light transition border-b border-gray-50">
+                            <i data-lucide="map" class="w-4 h-4 text-ranch-primary"></i> View Pricing
+                        </a>
+                    </div>
+                </div>
+                <a href="#" class="nav-link">Sandalwood Plantation</a>
+                <a href="#" class="nav-link">Resort & Cottages</a>
+                <a href="#" class="nav-link">Ask AI</a>
+                <a href="#" class="nav-link">FAQ's</a>
+                <a href="#" class="nav-link">Customer Support App</a>
+                <a href="#" class="nav-link">Other Projects</a>
+                <a href="#" class="nav-link">Contact Sales</a>
+                <div class="flex items-center gap-3 ml-4">
+                    <a href="#" class="px-5 py-2 border border-ranch-accent text-ranch-accent rounded-full font-bold hover:bg-ranch-accent hover:text-ranch-dark transition-all shadow-sm">Book Site Visit</a>
+                </div>
+            </div>
+
+            <button class="lg:hidden text-white" id="mobile-menu-btn">
+                <i data-lucide="menu" class="w-8 h-8"></i>
+            </button>
+        </nav>
+    </header>
+    
+    <!-- MOBILE-FIRST APP HEADER SECTION -->
+    <section class="bg-ranch-primary py-10 text-center text-white shadow-xl mt-16">
+        <div class="container mx-auto px-4">
+            <div class="h-6"></div>
+            <div class="h-6"></div>
+            <div class="h-6"></div>
+            
+            <div class="w-20 h-20 mx-auto mb-4 bg-ranch-accent rounded-2xl flex items-center justify-center shadow-lg">
+                <i data-lucide="smartphone" class="w-10 h-10 text-ranch-dark"></i>
+            </div>
+            <h1 class="text-3xl font-extrabold text-white mb-1">Your Go-Ranch Digital Hub</h1>
+            <p class="text-lg font-light text-ranch-light max-w-sm mx-auto">The **USM My City Customer App** is your gateway to managing your investment and lifestyle.</p>
+        </div>
+    </section>
+
+    <!-- FAQ ACCORDION SECTION -->
+    <section class="py-16 sm:py-24 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+            <h2 class="text-3xl font-bold text-center mb-12 text-ranch-dark">Essential Questions Answered</h2>
+
+            <div id="faq-container" class="space-y-4">
+                <!-- FAQ 1 -->
+                <div class="accordion-item bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden">
+                    <button class="accordion-header w-full p-6 text-left flex justify-between items-center font-semibold text-lg text-ranch-dark hover:bg-ranch-light transition duration-200" onclick="toggleAccordion(this)">
+                        <span>1. What is the Go-Ranch Project?</span>
+                        <i data-lucide="chevron-down" class="w-6 h-6 transform transition duration-300"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="p-6 pt-0 text-gray-700">The Go-Ranch project is a 450+ acre mega-project that combines DTCP-approved residential plots with a managed Sandalwood plantation and a fully operational Lifestyle Resort.</div>
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="accordion-item bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden">
+                    <button class="accordion-header w-full p-6 text-left flex justify-between items-center font-semibold text-lg text-ranch-dark hover:bg-ranch-light transition duration-200" onclick="toggleAccordion(this)">
+                        <span>2. Where is the project located?</span>
+                        <i data-lucide="chevron-down" class="w-6 h-6 transform transition duration-300"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="p-6 pt-0 text-gray-700">It is strategically located near Yadagirigutta and Aler on the Warangal Highway, approximately 1.5 hours' drive from Uppal, Hyderabad.</div>
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="accordion-item bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden">
+                    <button class="accordion-header w-full p-6 text-left flex justify-between items-center font-semibold text-lg text-ranch-dark hover:bg-ranch-light transition duration-200" onclick="toggleAccordion(this)">
+                        <span>3. Is the project DTCP approved?</span>
+                        <i data-lucide="chevron-down" class="w-6 h-6 transform transition duration-300"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="p-6 pt-0 text-gray-700">Yes, it is a DTCP-approved layout with L.P. No. 150/2019/W, ensuring all legal compliance and standardized development.</div>
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="accordion-item bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden">
+                    <button class="accordion-header w-full p-6 text-left flex justify-between items-center font-semibold text-lg text-ranch-dark hover:bg-ranch-light transition duration-200" onclick="toggleAccordion(this)">
+                        <span>4. What is the minimum plot size available?</span>
+                        <i data-lucide="chevron-down" class="w-6 h-6 transform transition duration-300"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="p-6 pt-0 text-gray-700">The minimum plot size typically starts at 200 square yards, though larger options are available.</div>
+                    </div>
+                </div>
+
+                <!-- FAQ 5 -->
+                <div class="accordion-item bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden">
+                    <button class="accordion-header w-full p-6 text-left flex justify-between items-center font-semibold text-lg text-ranch-dark hover:bg-ranch-light transition duration-200" onclick="toggleAccordion(this)">
+                        <span>5. How many Sandalwood trees are planted per 121 sq. yards?</span>
+                        <i data-lucide="chevron-down" class="w-6 h-6 transform transition duration-300"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="p-6 pt-0 text-gray-700">We plant approximately 12 high-quality Srigandham (Sandalwood) trees for every 121 sq. yards of plot area.</div>
+                    </div>
+                </div>
+
+                <!-- FAQ 6 -->
+                <div class="accordion-item bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden">
+                    <button class="accordion-header w-full p-6 text-left flex justify-between items-center font-semibold text-lg text-ranch-dark hover:bg-ranch-light transition duration-200" onclick="toggleAccordion(this)">
+                        <span>6. What is the profit-sharing ratio for Sandalwood?</span>
+                        <i data-lucide="chevron-down" class="w-6 h-6 transform transition duration-300"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="p-6 pt-0 text-gray-700">The net profit from the sale of Sandalwood heartwood is shared on a 50:50 basis between the plot owner and USM My City.</div>
+                    </div>
+                </div>
+
+                <!-- FAQ 7 -->
+                <div class="accordion-item bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden">
+                    <button class="accordion-header w-full p-6 text-left flex justify-between items-center font-semibold text-lg text-ranch-dark hover:bg-ranch-light transition duration-200" onclick="toggleAccordion(this)">
+                        <span>7. Who takes care of the plantation?</span>
+                        <i data-lucide="chevron-down" class="w-6 h-6 transform transition duration-300"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="p-6 pt-0 text-gray-700">USM My City manages the entire plantation, including drip irrigation, fertilization, and security, at no extra cost to the owner for the growth period.</div>
+                    </div>
+                </div>
+
+                <!-- FAQ 8 -->
+                <div class="accordion-item bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden">
+                    <button class="accordion-header w-full p-6 text-left flex justify-between items-center font-semibold text-lg text-ranch-dark hover:bg-ranch-light transition duration-200" onclick="toggleAccordion(this)">
+                        <span>8. How long is the harvest cycle for Sandalwood?</span>
+                        <i data-lucide="chevron-down" class="w-6 h-6 transform transition duration-300"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="p-6 pt-0 text-gray-700">Sandalwood typically requires 12 to 15 years to develop high-value heartwood suitable for harvesting.</div>
+                    </div>
+                </div>
+
+                <!-- FAQ 9 -->
+                <div class="accordion-item bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden">
+                    <button class="accordion-header w-full p-6 text-left flex justify-between items-center font-semibold text-lg text-ranch-dark hover:bg-ranch-light transition duration-200" onclick="toggleAccordion(this)">
+                        <span>9. What security measures are in place for the trees?</span>
+                        <i data-lucide="chevron-down" class="w-6 h-6 transform transition duration-300"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="p-6 pt-0 text-gray-700">The project features 24/7 security personnel, perimeter fencing, and CCTV monitoring to protect the valuable timber.</div>
+                    </div>
+                </div>
+
+                <!-- FAQ 10 -->
+                <div class="accordion-item bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden">
+                    <button class="accordion-header w-full p-6 text-left flex justify-between items-center font-semibold text-lg text-ranch-dark hover:bg-ranch-light transition duration-200" onclick="toggleAccordion(this)">
+                        <span>10. What are the benefits of the Resort Membership?</span>
+                        <i data-lucide="chevron-down" class="w-6 h-6 transform transition duration-300"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="p-6 pt-0 text-gray-700">Plot owners receive a Free Life Membership to Go-Ranch Resort, offering access to the swimming pool, indoor games, and clubhouse facilities.</div>
+                    </div>
+                </div>
+
+                <!-- FAQ 11 -->
+                <div class="accordion-item bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden">
+                    <button class="accordion-header w-full p-6 text-left flex justify-between items-center font-semibold text-lg text-ranch-dark hover:bg-ranch-light transition duration-200" onclick="toggleAccordion(this)">
+                        <span>11. Are there guest rooms available at the resort?</span>
+                        <i data-lucide="chevron-down" class="w-6 h-6 transform transition duration-300"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="p-6 pt-0 text-gray-700">Yes, the resort features luxury cottages and standard rooms available for members and guests at discounted rates.</div>
+                    </div>
+                </div>
+
+                <!-- FAQ 12 -->
+                <div class="accordion-item bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden">
+                    <button class="accordion-header w-full p-6 text-left flex justify-between items-center font-semibold text-lg text-ranch-dark hover:bg-ranch-light transition duration-200" onclick="toggleAccordion(this)">
+                        <span>12. Is there a maintenance fee for the resort?</span>
+                        <i data-lucide="chevron-down" class="w-6 h-6 transform transition duration-300"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="p-6 pt-0 text-gray-700">Resort membership is free for plot owners, though nominal usage charges or annual maintenance for specific amenities might apply as per company policy.</div>
+                    </div>
+                </div>
+
+                <!-- FAQ 13 -->
+                <div class="accordion-item bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden">
+                    <button class="accordion-header w-full p-6 text-left flex justify-between items-center font-semibold text-lg text-ranch-dark hover:bg-ranch-light transition duration-200" onclick="toggleAccordion(this)">
+                        <span>13. Can I build a house on my plot?</span>
+                        <i data-lucide="chevron-down" class="w-6 h-6 transform transition duration-300"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="p-6 pt-0 text-gray-700">Yes, as a DTCP-approved residential layout, you are permitted to build a weekend home or villa, subject to standard local building norms.</div>
+                    </div>
+                </div>
+
+                <!-- FAQ 14 -->
+                <div class="accordion-item bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden">
+                    <button class="accordion-header w-full p-6 text-left flex justify-between items-center font-semibold text-lg text-ranch-dark hover:bg-ranch-light transition duration-200" onclick="toggleAccordion(this)">
+                        <span>14. What basic amenities are provided in the layout?</span>
+                        <i data-lucide="chevron-down" class="w-6 h-6 transform transition duration-300"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="p-6 pt-0 text-gray-700">We provide 40ft and 33ft wide blacktop roads, electricity with street lights, underground drainage, and a dedicated water overhead tank.</div>
+                    </div>
+                </div>
+
+                <!-- FAQ 15 -->
+                <div class="accordion-item bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden">
+                    <button class="accordion-header w-full p-6 text-left flex justify-between items-center font-semibold text-lg text-ranch-dark hover:bg-ranch-light transition duration-200" onclick="toggleAccordion(this)">
+                        <span>15. How do I track my tree growth?</span>
+                        <i data-lucide="chevron-down" class="w-6 h-6 transform transition duration-300"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="p-6 pt-0 text-gray-700">The USM My City Customer App allows you to track project updates, view your plot details, and see photos/videos of the plantation development.</div>
+                    </div>
+                </div>
+
+                <!-- FAQ 16 -->
+                <div class="accordion-item bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden">
+                    <button class="accordion-header w-full p-6 text-left flex justify-between items-center font-semibold text-lg text-ranch-dark hover:bg-ranch-light transition duration-200" onclick="toggleAccordion(this)">
+                        <span>16. Is financing available for plot purchases?</span>
+                        <i data-lucide="chevron-down" class="w-6 h-6 transform transition duration-300"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="p-6 pt-0 text-gray-700">We offer flexible installment plans. Since it is a DTCP layout, bank loans from major financial institutions are also generally available.</div>
+                    </div>
+                </div>
+
+                <!-- FAQ 17 -->
+                <div class="accordion-item bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden">
+                    <button class="accordion-header w-full p-6 text-left flex justify-between items-center font-semibold text-lg text-ranch-dark hover:bg-ranch-light transition duration-200" onclick="toggleAccordion(this)">
+                        <span>17. What documents will I receive upon purchase?</span>
+                        <i data-lucide="chevron-down" class="w-6 h-6 transform transition duration-300"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="p-6 pt-0 text-gray-700">You will receive a Sale Deed registered in your name, the DTCP LP Copy, and an EC (Encumbrance Certificate) for your specific plot.</div>
+                    </div>
+                </div>
+
+                <!-- FAQ 18 -->
+                <div class="accordion-item bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden">
+                    <button class="accordion-header w-full p-6 text-left flex justify-between items-center font-semibold text-lg text-ranch-dark hover:bg-ranch-light transition duration-200" onclick="toggleAccordion(this)">
+                        <span>18. Is there any GST on the plot cost?</span>
+                        <i data-lucide="chevron-down" class="w-6 h-6 transform transition duration-300"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="p-6 pt-0 text-gray-700">Land sale is generally exempt from GST, but please confirm with our sales representative for the most current tax regulations.</div>
+                    </div>
+                </div>
+
+                <!-- FAQ 19 -->
+                <div class="accordion-item bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden">
+                    <button class="accordion-header w-full p-6 text-left flex justify-between items-center font-semibold text-lg text-ranch-dark hover:bg-ranch-light transition duration-200" onclick="toggleAccordion(this)">
+                        <span>19. Can I resell my plot?</span>
+                        <i data-lucide="chevron-down" class="w-6 h-6 transform transition duration-300"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="p-6 pt-0 text-gray-700">Yes, you have full ownership and can resell the plot at any time. The sandalwood profit-sharing agreement will transfer to the new owner.</div>
+                    </div>
+                </div>
+
+                <!-- FAQ 20 -->
+                <div class="accordion-item bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden">
+                    <button class="accordion-header w-full p-6 text-left flex justify-between items-center font-semibold text-lg text-ranch-dark hover:bg-ranch-light transition duration-200" onclick="toggleAccordion(this)">
+                        <span>20. Who is the developer USM My City?</span>
+                        <i data-lucide="chevron-down" class="w-6 h-6 transform transition duration-300"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="p-6 pt-0 text-gray-700">USM My City, led by Dr. P. Venkat Rao, is a renowned real estate firm in Hyderabad with over 30 years of experience and a track record of multi-thousand-acre developments.</div>
+                    </div>
+                </div>
+
+                <!-- FAQ 21 -->
+                <div class="accordion-item bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden">
+                    <button class="accordion-header w-full p-6 text-left flex justify-between items-center font-semibold text-lg text-ranch-dark hover:bg-ranch-light transition duration-200" onclick="toggleAccordion(this)">
+                        <span>21. Is the resort already operational?</span>
+                        <i data-lucide="chevron-down" class="w-6 h-6 transform transition duration-300"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="p-6 pt-0 text-gray-700">Yes, the Go-Ranch resort is fully functional and currently serves thousands of members and visitors.</div>
+                    </div>
+                </div>
+
+                <!-- FAQ 22 -->
+                <div class="accordion-item bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden">
+                    <button class="accordion-header w-full p-6 text-left flex justify-between items-center font-semibold text-lg text-ranch-dark hover:bg-ranch-light transition duration-200" onclick="toggleAccordion(this)">
+                        <span>22. What happens if a tree dies?</span>
+                        <i data-lucide="chevron-down" class="w-6 h-6 transform transition duration-300"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="p-6 pt-0 text-gray-700">During the initial growth phases, our management team replaces any saplings that do not survive to ensure your plot maintains its plantation value.</div>
+                    </div>
+                </div>
+
+                <!-- FAQ 23 -->
+                <div class="accordion-item bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden">
+                    <button class="accordion-header w-full p-6 text-left flex justify-between items-center font-semibold text-lg text-ranch-dark hover:bg-ranch-light transition duration-200" onclick="toggleAccordion(this)">
+                        <span>23. How far is the project from the Airport?</span>
+                        <i data-lucide="chevron-down" class="w-6 h-6 transform transition duration-300"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="p-6 pt-0 text-gray-700">It is approximately a 2-hour drive from Rajiv Gandhi International Airport via the Outer Ring Road (ORR).</div>
+                    </div>
+                </div>
+
+                <!-- FAQ 24 -->
+                <div class="accordion-item bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden">
+                    <button class="accordion-header w-full p-6 text-left flex justify-between items-center font-semibold text-lg text-ranch-dark hover:bg-ranch-light transition duration-200" onclick="toggleAccordion(this)">
+                        <span>24. Can NRIs invest in this project?</span>
+                        <i data-lucide="chevron-down" class="w-6 h-6 transform transition duration-300"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="p-6 pt-0 text-gray-700">Yes, NRIs can legally purchase residential plots in India and are eligible for the sandalwood profit-sharing benefits.</div>
+                    </div>
+                </div>
+
+                <!-- FAQ 25 -->
+                <div class="accordion-item bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden">
+                    <button class="accordion-header w-full p-6 text-left flex justify-between items-center font-semibold text-lg text-ranch-dark hover:bg-ranch-light transition duration-200" onclick="toggleAccordion(this)">
+                        <span>25. What is the single biggest advantage of Go-Ranch?</span>
+                        <i data-lucide="chevron-down" class="w-6 h-6 transform transition duration-300"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="p-6 pt-0 text-gray-700 font-medium">The unique "Triple Asset" advantage: High real estate appreciation of a DTCP plot, massive wealth generation from Sandalwood, and a luxury resort lifestyle membership.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="py-16 bg-white text-center"> 
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-ranch-dark mb-4">Download Official FAQ's PDF</h2>
+            <a href="https://drive.google.com/file/d/1QsMXYcK9o26Q0RxtlXdVktWDACK0DZ5J/view?usp=sharing" target="_blank" class="inline-flex items-center px-10 py-4 bg-ranch-accent text-ranch-dark text-xl font-bold rounded-full shadow-2xl hover:bg-yellow-400 transition duration-300 transform hover:scale-105">
+                Download FAQ PDF File <i data-lucide="download" class="w-5 h-5 ml-3"></i>
+            </a>
+        </div>
+    </section>
+
+    <footer class="bg-ranch-dark text-ranch-light py-8">
+        <div class="container mx-auto px-4 text-center text-sm">
+            &copy; 2024 Go-Ranch Project. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            console.log('Mobile menu toggled');
+        });
+    </script>
+</body>
+</html>

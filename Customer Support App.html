@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Go-Ranch Customer App Support & Features | USM MyCity</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Custom Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'ranch-primary': '#004d40', // Deep Forest Green/Teal
+                        'ranch-accent': '#FFC107',  // Gold/Amber
+                        'ranch-light': '#E0F2F1',
+                        'ranch-dark': '#00251A',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans bg-ranch-light text-ranch-dark min-h-screen flex flex-col">
+
+    <!-- HEADER & NAVIGATION -->
+    <header class="sticky top-0 z-50 bg-ranch-dark shadow-lg">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="logo text-xl sm:text-2xl font-extrabold text-ranch-accent tracking-wider">Customer App Support</div>
+            <ul class="hidden md:flex space-x-8 text-white text-lg font-medium">
+            </ul>
+            <a href="https://www.warrangal-highway.homes/home/contact-sales" class="hidden sm:block px-4 py-2 bg-ranch-accent text-ranch-dark font-semibold rounded-full hover:bg-yellow-400 transition duration-300 shadow-md">
+                Contact Sales
+            </a>
+             <!-- Mobile Menu Placeholder -->
+            <button class="md:hidden text-white focus:outline-none">
+                 <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </nav>
+    </header>
+    
+    <!-- MOBILE-FIRST APP HEADER SECTION -->
+    <section class="bg-ranch-primary py-10 text-center text-white shadow-xl">
+        <div class="container mx-auto px-4">
+            <div class="w-20 h-20 mx-auto mb-4 bg-ranch-accent rounded-2xl flex items-center justify-center shadow-lg">
+                <i data-lucide="smartphone" class="w-10 h-10 text-ranch-dark"></i>
+            </div>
+            <h1 class="text-3xl font-extrabold text-white mb-1">Your Go-Ranch Digital Hub</h1>
+            <p class="text-lg font-light text-ranch-light max-w-sm mx-auto">The **USM My City Customer App** is your gateway to managing your investment and lifestyle.</p>
+        </div>
+    </section>
+
+    <!-- KEY APP FEATURES SECTION -->
+    <section class="py-12 px-4">
+        <div class="container mx-auto max-w-3xl">
+            <h2 class="text-2xl font-bold text-center text-ranch-primary mb-8 border-b-2 border-ranch-accent pb-2">Key Features & Amenities Managed</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                <!-- Feature 1: Project Progress Tracker -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-ranch-accent transition duration-300 hover:shadow-xl">
+                    <div class="flex items-center space-x-4 mb-3">
+                        <i data-lucide="trending-up" class="w-8 h-8 text-ranch-primary"></i>
+                        <h3 class="text-xl font-semibold text-ranch-dark">Project Progress Tracker</h3>
+                    </div>
+                    <p class="text-gray-600 text-sm">View real-time development updates, high-resolution photos, and videos of the DTCP plot development and resort construction progress.</p>
+                </div>
+
+                <!-- Feature 2: Sandalwood Investment Dashboard -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-ranch-accent transition duration-300 hover:shadow-xl">
+                    <div class="flex items-center space-x-4 mb-3">
+                        <i data-lucide="leaf" class="w-8 h-8 text-ranch-primary"></i>
+                        <h3 class="text-xl font-semibold text-ranch-dark">Sandalwood Dashboard</h3>
+                    </div>
+                    <p class="text-gray-600 text-sm">Monitor the growth, health status, and projected harvest value of your **GPS-tagged sandalwood trees** directly on your dashboard.</p>
+                </div>
+
+                <!-- Feature 3: Payment & Document Management -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-ranch-accent transition duration-300 hover:shadow-xl">
+                    <div class="flex items-center space-x-4 mb-3">
+                        <i data-lucide="credit-card" class="w-8 h-8 text-ranch-primary"></i>
+                        <h3 class="text-xl font-semibold text-ranch-dark">Payments & Documents</h3>
+                    </div>
+                    <p class="text-gray-600 text-sm">Securely check your payment history, download receipts, view outstanding dues, and access your registered **Sale Deed** and agreements.</p>
+                </div>
+
+                <!-- Feature 4: Amenity Booking & Resort Access -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-ranch-accent transition duration-300 hover:shadow-xl">
+                    <div class="flex items-center space-x-4 mb-3">
+                        <i data-lucide="ticket" class="w-8 h-8 text-ranch-primary"></i>
+                        <h3 class="text-xl font-semibold text-ranch-dark">Resort Booking & Access</h3>
+                    </div>
+                    <p class="text-gray-600 text-sm">Book overnight resort cottages, check availability for the Conference Hall, or reserve slots for amenities like the Beach Pool and Mini Golf.</p>
+                </div>
+
+                <!-- Feature 5: Customer Support & Service Requests -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-ranch-accent transition duration-300 hover:shadow-xl">
+                    <div class="flex items-center space-x-4 mb-3">
+                        <i data-lucide="help-circle" class="w-8 h-8 text-ranch-primary"></i>
+                        <h3 class="text-xl font-semibold text-ranch-dark">Direct Customer Support</h3>
+                    </div>
+                    <p class="text-gray-600 text-sm">Instantly raise service requests, submit maintenance queries, or chat directly with the Go-Ranch/USM support team for quick resolution.</p>
+                </div>
+
+                <!-- Feature 6: Event and Announcement Center -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-ranch-accent transition duration-300 hover:shadow-xl">
+                    <div class="flex items-center space-x-4 mb-3">
+                        <i data-lucide="megaphone" class="w-8 h-8 text-ranch-primary"></i>
+                        <h3 class="text-xl font-semibold text-ranch-dark">Events & Announcements</h3>
+                    </div>
+                    <p class="text-gray-600 text-sm">Stay informed about upcoming events, weekend activities at the resort, and important announcements regarding the project timeline.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DOWNLOAD & SUPPORT CARD -->
+    <section class="bg-ranch-primary p-8 mt-6">
+        <div class="container mx-auto max-w-2xl text-center">
+            <h2 class="text-3xl font-bold text-ranch-accent mb-4">Download the Customer App</h2>
+            <p class="text-lg text-ranch-light mb-6">Search for **"USM My City Customer App"** on your respective app store.</p>
+            
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                
+                <!-- Mock Play Store Link -->
+                <a href="https://play.google.com/store/apps/details?id=com.usm.mycitycustomer&hl=en_IN&pli=1" target="_blank" class="flex items-center justify-center px-6 py-3 bg-white text-ranch-dark font-bold rounded-lg shadow-xl hover:bg-gray-200 transition duration-300">
+                    <i data-lucide="play-circle" class="w-6 h-6 mr-2"></i> Get on Google Play
+                </a>
+                
+                <!-- Mock App Store Link -->
+                <a href="#" target="_blank" class="flex items-center justify-center px-6 py-3 bg-white text-ranch-dark font-bold rounded-lg shadow-xl hover:bg-gray-200 transition duration-300 opacity-70">
+                    <i data-lucide="apple" class="w-6 h-6 mr-2"></i> Get on App Store (Coming Soon)
+                </a>
+            </div>
+
+            <div class="mt-8 pt-4 border-t border-ranch-light/30">
+                <h3 class="text-xl font-semibold text-ranch-light mb-2">Need Help with the App?</h3>
+                <p class="text-ranch-light text-base">
+                    For technical support, please email us at <a href="mailto:support@usminfra.com" class="text-ranch-accent hover:underline">support@usminfra.com</a> or call the dedicated support line.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-ranch-dark text-white py-10">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="mb-4">
+                <a href="https://www.warrangal-highway.homes/terms-conditions" class="mx-3 hover:text-ranch-accent transition duration-200">Terms & Conditions</a> | 
+                <a href="https://www.warrangal-highway.homes/privacy-policy" class="mx-3 hover:text-ranch-accent transition duration-200">Privacy Policy</a> |
+                <a href="https://www.warrangal-highway.homes/disclaimer" class="mx-3 hover:text-ranch-accent transition duration-200">Disclaimer</a>
+            </div>
+            <p class="text-sm mb-2">&copy; 2025 Go-Ranch Resorts | A Project by USM Infra.</p>
+            <p class="text-sm font-semibold text-ranch-accent">DTCP Approved Layout: T.L.P.NO. 58/2025/W</p>
+            <p class="text-sm font-semibold text-ranch-accent">RERA Registration Number: P00600001873</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Renders Lucide icons and ensures they display correctly
+        lucide.createIcons();
+    </script>
+</body>
+</html>

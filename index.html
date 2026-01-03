@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- SEO Optimization -->
+    <title>Go-Ranch Resorts | Premium Sandalwood Plot Investment</title>
+    <meta name="description" content="Invest in DTCP Approved Plots at Go-Ranch Resorts. Gain 50-50 Sandalwood profit share and a FREE Resort Membership.">
+    
+    <!-- Custom Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'ranch-primary': '#1a4731',
+                        'ranch-accent': '#facc15',
+                        'ranch-light': '#f0fdf4',
+                        'ranch-dark': '#0f291c',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+        /* Header Transitions */
+        header {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        header.scrolled {
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            background: rgba(15, 41, 28, 0.95);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.3);
+        }
+
+        /* Nav Link Animations */
+        .nav-link {
+            position: relative;
+            padding: 0.5rem 0;
+            transition: color 0.3s;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: #facc15;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Dropdown Animation */
+        .dropdown-menu {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+        }
+        .dropdown-group:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        /* Pillar Hover */
+        .pillar {
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .pillar:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(26, 71, 49, 0.2);
+        }
+
+        .aspect-video { aspect-ratio: 16 / 9; }
+
+        /* Modal specific scroll */
+        .modal-content-box {
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50 text-ranch-dark pt-20">
+
+    <!-- HEADER & NAVIGATION -->
+    <header id="main-header" class="fixed top-0 left-0 w-full z-50 bg-ranch-dark py-4 text-white shadow-lg">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+            <div class="flex items-center gap-2 group cursor-pointer">
+                <div class="w-10 h-10 bg-ranch-accent rounded-lg flex items-center justify-center rotate-3 group-hover:rotate-0 transition-transform duration-300">
+                    <i data-lucide="tree-pine" class="text-ranch-dark w-6 h-6"></i>
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-xl font-black tracking-tighter leading-none text-white group-hover:text-ranch-accent transition-colors">GO-RANCH</span>
+                    <span class="text-[10px] uppercase tracking-widest text-ranch-accent font-bold">Resorts & Estates</span>
+                </div>
+            </div>
+            
+            <div class="hidden lg:flex items-center gap-6 text-sm font-semibold">
+                <a href="#" class="nav-link">Home</a>
+                <div class="relative dropdown-group">
+                    <button class="nav-link flex items-center gap-1">
+                    <a href="Plot & Pricing" class="nav-link">Plots & Pricing</a><i data-lucide="chevron-down" class="w-4 h-4 opacity-50"></i>
+                    </button>
+                    <div class="dropdown-menu absolute top-full left-0 mt-2 w-48 bg-white text-ranch-dark shadow-2xl rounded-xl overflow-hidden border border-gray-100">
+                        <a href="https://drive.google.com/file/d/1egb9KKyDC_KutAKTaDA79ABvLZPkRoz0/view" target="_blank" class="flex items-center gap-3 px-4 py-3 hover:bg-ranch-light transition border-b border-gray-50">
+                            <i data-lucide="map" class="w-4 h-4 text-ranch-primary"></i> View Pricing
+                        </a>
+                        </a>
+                    </div>
+                </div>
+                <a href="Sandalwood Plantation" class="nav-link">Sandalwood Plantation</a>
+                <a href="Resort & Cottages" class="nav-link">Resort & Cottages</a>
+                <a href="Ask AI" class="nav-link">Ask AI</a>
+                <a href="FAQ's" class="nav-link">FAQ's</a>
+                <a href="Customer Support App" class="nav-link">Customer Support App</a>
+                <a href="Other Projects" class="nav-link">Other Projects</a>
+                <a href="Contact Sales" class="nav-link">Contact Sales</a>
+                <div class="flex items-center gap-3 ml-4">
+                    <a href="Book Site Visit" class="px-5 py-2 border border-ranch-accent text-ranch-accent rounded-full font-bold hover:bg-ranch-accent hover:text-ranch-dark transition-all shadow-sm">Book Site Visit</a>
+                    </div>
+            </div>
+
+            <button class="lg:hidden text-white" id="mobile-menu-btn">
+                <i data-lucide="menu" class="w-8 h-8"></i>
+            </button>
+        </nav>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="hidden fixed inset-0 bg-ranch-dark z-[100] flex flex-col items-center justify-center gap-6 text-xl font-bold p-6 text-center text-white">
+            <button class="absolute top-6 right-6" id="close-menu-btn"><i data-lucide="x" class="w-10 h-10"></i></button>
+            <a href="#" class="hover:text-ranch-accent">Home</a>
+            <a href="#core-value" class="hover:text-ranch-accent">Plots & Pricing</a>
+            <a href="#profit-peek" class="hover:text-ranch-accent">Sandalwood</a>
+            <a href="#" class="text-ranch-accent border border-ranch-accent px-6 py-2 rounded-full">Book Site Visit</a>
+            <a href="https://wa.me/" class="hover:text-ranch-accent">Contact Us</a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="min-h-[70vh] flex items-center justify-center text-center relative bg-ranch-primary py-20">
+        <div class="hero-content relative z-10 px-8 max-w-5xl mx-auto">
+            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-6">
+                A Smart Investment Today <br><span class="text-ranch-accent">Helps Your Next Generation</span>
+            </h1>
+            <p class="text-xl sm:text-2xl text-ranch-light font-light mb-12 max-w-3xl mx-auto">
+                Secure <b>DTCP Approved</b> Plots with <b>Guaranteed Sandalwood Wealth</b> and a <b>FREE Resort Lifestyle</b>.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="https://drive.google.com/file/d/1x3LgHnWY0hBGiHVrWeBgQgoNsCvagfuB/view" target="_blank" class="w-full sm:w-auto px-10 py-4 bg-ranch-accent text-ranch-dark text-lg font-bold rounded-full shadow-2xl hover:bg-yellow-400 transition duration-300 transform hover:scale-105">
+                    Secure Your Plot Today
+                </a>
+                <a href="https://drive.google.com/file/d/19TjmYpN5Ynn4QTD2n-Joh99piKrgwpJI/view" target="_blank" class="w-full sm:w-auto px-10 py-4 bg-transparent border-2 border-white text-white text-lg font-bold rounded-full hover:bg-white hover:text-ranch-dark transition duration-300 transform hover:scale-105">
+                    Download Brochure
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Banner Image -->
+    <section class="w-full overflow-hidden">
+        <img src="https://i.ibb.co/q3xNTH6L/main-photo.jpg" 
+             alt="Go-Ranch Resort Overview" class="w-full h-auto object-cover max-h-[500px]">
+    </section>
+
+    <!-- VIDEO SHOWCASE -->
+    <section class="py-16 sm:py-24 bg-ranch-primary text-white">
+        <div class="container mx-auto px-4 text-center max-w-4xl">
+            <h2 class="text-3xl font-bold mb-6 text-ranch-accent">Take a Video Tour of Go Ranch Resort</h2>
+            <p class="text-lg text-ranch-light mb-8">Get a sneak peek of Fun & Activities + Amenities inside the Go Ranch Resort.</p>
+            
+            <div class="bg-ranch-dark bg-opacity-50 rounded-xl shadow-2xl overflow-hidden p-4">
+                <div class="aspect-video rounded-lg overflow-hidden border-4 border-ranch-accent">
+                    <iframe 
+                        class="w-full h-full"
+                        src="https://www.youtube.com/embed/bQ28gNvo_Ng?si=SE0gDZIxWSqy8hOK" 
+                        title="Go-Ranch Resort Tour" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. THE CORE VALUE (Triple-Pillar Summary) --><section id="core-value" class="py-16 sm:py-24 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12 text-ranch-primary">The Go-Ranch Triple Advantage: Invest. Grow. Enjoy.</h2>
+            <div class="pillars-container grid md:grid-cols-3 gap-8">
+                <!-- Pillar 1: Asset Security (Approval Modal) --><div class="pillar bg-white p-6 sm:p-8 rounded-xl shadow-lg border-t-4 border-ranch-primary">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <i data-lucide="shield-check" class="w-8 h-8 text-ranch-accent"></i>
+                        <h3 class="text-xl font-semibold text-ranch-dark">1. DTCP Approved Land Security</h3>
+                    </div>
+                    <p class="text-gray-600">Invest in **DTCP Approved Layout L.P. 150/2019/W**. Land is secure, legally compliant, and strategically located near the **Regional Ring Road (RRR)** for maximum appreciation.</p>
+                    <button id="openApprovalModal" class="mt-4 inline-flex items-center text-ranch-primary font-medium hover:text-ranch-accent transition duration-200 focus:outline-none">
+                        Learn More about Approval <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
+                    </button>
+                </div>
+
+                <!-- Pillar 2: Wealth Generation (Profit Info Modal) --><div class="pillar bg-white p-6 sm:p-8 rounded-xl shadow-lg border-t-4 border-ranch-primary">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <i data-lucide="leaf" class="w-8 h-8 text-ranch-accent"></i>
+                        <h3 class="text-xl font-semibold text-ranch-dark">2. Managed Sandalwood Wealth</h3>
+                    </div>
+                    <p class="text-gray-600">The company plants and maintains **10 Sandalwood plants** (per 120 sq yd plot) for **15 years at no cost**. Enjoy a transparent **50-50 profit share** after harvest.</p>
+                    <button id="openProfitInfoModal" class="mt-4 inline-flex items-center text-ranch-primary font-medium hover:text-ranch-accent transition duration-200 focus:outline-none">
+                        View Profit Potential <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
+                    </button>
+                </div>
+
+                <!-- Pillar 3: Immediate Lifestyle (Amenities Modal) --><div class="pillar bg-white p-6 sm:p-8 rounded-xl shadow-lg border-t-4 border-ranch-primary">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <i data-lucide="aperture" class="w-8 h-8 text-ranch-accent"></i>
+                        <h3 class="text-xl font-semibold text-ranch-dark">3. FREE Resort Lifestyle Membership</h3>
+                    </div>
+                    <p class="text-gray-600">Get **immediate access** to the **450+ Acre** mega-project resort. Plot owners receive a **Free Membership** to use the Beach Pool, Adventure Activities, and more, any time.</p>
+                    <button id="openAmenitiesModal" class="mt-4 inline-flex items-center text-ranch-primary font-medium hover:text-ranch-accent transition duration-200 focus:outline-none">
+                        Explore Amenities <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. KEY METRICS & TRUST SECTION --><section id="metrics-trust" class="py-12 bg-ranch-primary text-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div class="metric">
+                <i data-lucide="maximize" class="w-10 h-10 mx-auto mb-2 text-ranch-accent"></i>
+                <span class="number text-3xl font-bold">450+</span>
+                <span class="label block text-sm font-medium opacity-80">Total Project Acres</span>
+            </div>
+            <div class="metric">
+                <i data-lucide="calendar-check" class="w-10 h-10 mx-auto mb-2 text-ranch-accent"></i>
+                <span class="number text-3xl font-bold">15</span>
+                <span class="label block text-sm font-medium opacity-80">Years of Free Maintenance</span>
+            </div>
+            <div class="metric">
+                <i data-lucide="line-chart" class="w-10 h-10 mx-auto mb-2 text-ranch-accent"></i>
+                <span class="number text-3xl font-bold">50-50</span>
+                <span class="label block text-sm font-medium opacity-80">Sandalwood Profit Share</span>
+            </div>
+            <div class="metric">
+                <i data-lucide="stamp" class="w-10 h-10 mx-auto mb-2 text-ranch-accent"></i>
+                <span class="number text-3xl font-bold">DTCP</span>
+                <span class="label block text-sm font-medium opacity-80">Approved Layout (L.P. 150/2019/W)</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. SANDALWOOD PROFIT SNEAK PEEK (Urgency) --><section id="profit-peek" class="py-16 sm:py-24 bg-ranch-light">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-12">
+            
+            <div class="image-video md:w-1/2 rounded-xl shadow-2xl overflow-hidden order-2 md:order-1">
+                <!-- Fallback/Placeholder image --><img src="https://usminfra.com/public/uploads/thumbnail_image/32f39307bf09c37339cabbb308173c17.jpg" 
+                    onerror="this.onerror=null; this.src='https://usminfra.com/public/uploads/thumbnail_image/32f39307bf09c37339cabbb308173c17.jpg';"
+                    alt="Managed Sandalwood Farm Plot at Go-Ranch" class="w-full h-auto object-cover">
+            </div>
+            
+            <div class="content md:w-1/2 order-1 md:order-2">
+                <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-ranch-dark">Your Path to Maximum Profits </h2>
+                <p class="text-lg text-gray-700 mb-6">Sandalwood is a high-value commodity. With each plant yielding **~25 kgs**, and current market rates up to **₹20,000/- per kg**, your projected returns after 15 years are substantial. We manage the harvest and ensure complete transparency with **GPS-enabled tree chips**.</p>
+                
+                <p class="small-text text-ranch-primary font-semibold mb-6">Plots available in **120 Sq Yards (1 Unit)** and **240 Sq Yards (2 Units)**. Limited inventory remains in Phase I.</p>
+                
+                <!-- This button still opens the detailed ROI CALCULATOR --><button id="openRoiModal" class="cta-button primary inline-flex items-center px-8 py-3 bg-ranch-primary text-white text-lg font-semibold rounded-full shadow-lg hover:bg-ranch-dark transition duration-300">
+                    Calculate Your ROI <i data-lucide="trending-up" class="w-5 h-5 ml-2"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. RESORT LIFESTYLE SNEAK PEEK --><section id="resort-lifestyle" class="py-16 sm:py-24 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-ranch-primary">Visit Your Investment Any Time</h2>
+            <p class="text-lg text-gray-700 max-w-3xl mx-auto mb-10">Plot ownership offers immediate lifestyle benefits. Enjoy our wide range of world-class amenities—**all included with your Free Resort Membership**.</p>
+            
+            <div class="activities-grid grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="activity p-6 bg-ranch-light rounded-xl shadow-md">
+                    <i data-lucide="umbrella" class="w-8 h-8 mx-auto mb-3 text-ranch-primary"></i>
+                    <h4 class="font-bold text-ranch-dark">Beach Pool Access</h4>
+                    <p class="text-sm text-gray-600">Free use of the sprawling Beach-Style Swimming Pool.</p>
+                </div>
+                <div class="activity p-6 bg-ranch-light rounded-xl shadow-md">
+                    <i data-lucide="zap" class="w-8 h-8 mx-auto mb-3 text-ranch-primary"></i>
+                    <h4 class="font-bold text-ranch-dark">Zipline & Adventure Games</h4>
+                    <p class="text-sm text-gray-600">Access to all 15+ adventure activities and sports courts.</p>
+                </div>
+                <div class="activity p-6 bg-ranch-light rounded-xl shadow-md">
+                    <i data-lucide="golf" class="w-8 h-8 mx-auto mb-3 text-ranch-primary"></i>
+                    <h4 class="font-bold text-ranch-dark">Mini Golf & Sports Courts</h4>
+                    <p class="text-sm text-gray-600">Enjoy Mini Golf, Pickleball, Shuttle, and Cricket Nets.</p>
+                </div>
+                <div class="activity p-6 bg-ranch-light rounded-xl shadow-md">
+                    <i data-lucide="tent" class="w-8 h-8 mx-auto mb-3 text-ranch-primary"></i>
+                    <h4 class="font-bold text-ranch-dark">Rain Dance & Bonfire</h4>
+                    <p class="text-sm text-gray-600">Relaxing rooms, Bonfire nights, and Rain Dance parties.</p>
+                </div>
+            </div>
+            
+            <!-- FIX: Changed button to an <a> tag and removed the modal-triggering ID so it opens the link directly. Added target="_blank" -->
+            <a href="https://drive.google.com/file/d/1JmoIXjd36_P4hHXarwv83aFv6b4P3hE3/view?usp=sharing" target="_blank" class="cta-button secondary inline-block mt-10 px-8 py-3 bg-ranch-accent text-ranch-dark text-lg font-semibold rounded-full hover:bg-yellow-400 transition duration-300 transform hover:scale-105">
+                Over 20 Activities: Included with Your Free Membership
+            </a>
+        </div>
+    </section>
+
+    <!-- NEW SECTION: 8. SECOND VIDEO SHOWCASE (Above Footer) --><section class="py-16 sm:py-24 bg-ranch-light text-ranch-dark">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-4xl">
+            <h2 class="text-3xl font-bold mb-6 text-ranch-primary">Check out your Dream Investment Project</h2>
+            <p class="text-lg text-gray-700 mb-8">Sandalwood Plantation Investment Near Hyderabad  Go Ranch Telangana Project Review 2025
+
+Looking for a profitable and sustainable real estate investment near Hyderabad? 🌿
+Welcome to the Go Ranch Sandalwood Plantation Project, Telangana’s most promising eco-farmland investment opportunity located at Bachanapet, near Alair on the Warangal Highway Route.</p>
+            
+            <!-- Video Showcase Embed (Testimonial) --><div class="bg-white rounded-xl shadow-2xl overflow-hidden p-4">
+                <div class="aspect-video rounded-lg overflow-hidden border-4 border-ranch-primary">
+                    <iframe 
+                        class="w-full h-full"
+                        src="https://www.youtube.com/embed/pVm2sS5zWQA?si=P1m_sEyKDpX3gQYg" 
+                        title="Sandalwood Plantation Investment Near Hyderabad Go Ranch Telangana Project Review 2025" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <p class="p-4 text-center text-sm text-gray-700">A genuine investment plan with 3 benefits, sandalwood profit + resort membership + 50% discount on cottages stay.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. FOOTER --><footer class="bg-ranch-dark text-white py-10">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="mb-4">
+                <a href="https://www.warrangal-highway.homes/terms-conditions" class="mx-3 hover:text-ranch-accent transition duration-200">Terms & Conditions</a> | 
+                <a href="https://www.warrangal-highway.homes/privacy-policy" class="mx-3 hover:text-ranch-accent transition duration-200">Privacy Policy</a> |
+                <a href="https://www.warrangal-highway.homes/disclaimer" class="mx-3 hover:text-ranch-accent transition duration-200">Disclaimer</a>
+            </div>
+            <p class="text-sm mb-2">&copy; 2025 Go-Ranch Resorts | A Project by USM Infra.</p>
+            <!-- Updated RERA and LP numbers to match the main pitch, assuming consolidation --><p class="text-sm font-semibold text-ranch-accent">DTCP Approved Layout: L.P. 150/2019/W</p>
+            <p class="text-sm font-semibold text-ranch-accent">RERA Registration Number: P00600001873</p>
+        </div>
+    </footer>
+    
+    <!-- MODAL: ROI CALCULATOR --><div id="roiModal" class="fixed inset-0 bg-ranch-dark bg-opacity-80 backdrop-blur-sm hidden items-center justify-center z-[100] py-8 px-4">
+        <div class="bg-white rounded-xl shadow-2xl w-full max-w-md p-6 sm:p-8 relative transform transition-all duration-300 scale-95 opacity-0 modal-content-box" id="roiModalContent">
+            
+            <!-- Close Button --><button id="closeRoiModal" class="absolute top-4 right-4 text-gray-600 hover:text-ranch-dark transition duration-200">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            
+            <h3 class="text-2xl font-bold text-ranch-primary mb-2 flex items-center">
+                <i data-lucide="calculator" class="w-6 h-6 mr-2"></i> Sandalwood ROI Calculator (15 Years)
+            </h3>
+            <p class="text-sm text-gray-600 mb-6">Estimate your potential returns based on the 50-50 profit share model.</p>
+
+            <!-- Input Form --><div class="space-y-4">
+                <div>
+                    <label for="plotUnits" class="block text-sm font-medium text-ranch-dark mb-1">
+                        Number of Plot Units (1 Unit = 120 Sq Yds)
+                    </label>
+                    <input type="number" id="plotUnits" value="1" min="1" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-ranch-accent focus:border-ranch-accent" placeholder="e.g., 2 (for 240 Sq Yds)">
+                    <p class="text-xs text-gray-500 mt-1">1 unit plants 10 trees. 2 units plant 20 trees.</p>
+                </div>
+
+                <div>
+                    <label for="futurePrice" class="block text-sm font-medium text-ranch-dark mb-1">
+                        Future Sandalwood Price (₹ per kg)
+                    </label>
+                    <input type="number" id="futurePrice" value="40000" min="20000" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-ranch-accent focus:border-ranch-accent" placeholder="Estimated price after 15 years">
+                    <p class="text-xs text-gray-500 mt-1">Current market rate is around ₹20,000/- per kg.</p>
+                </div>
+            </div>
+
+            <button id="calculateRoi" class="w-full mt-6 py-3 bg-ranch-accent text-ranch-dark font-bold rounded-full shadow-lg hover:bg-yellow-400 transition duration-300 transform hover:scale-[1.01]">
+                Calculate Potential Profit
+            </button>
+
+            <!-- Results Display --><div id="roiResults" class="mt-8 pt-4 border-t border-ranch-light hidden">
+                <h4 class="text-xl font-bold text-ranch-dark mb-3">Your Estimated 15-Year Return</h4>
+                
+                <div class="space-y-3">
+                    <div class="flex justify-between items-center text-gray-700">
+                        <span>Total Sandalwood Trees:</span>
+                        <span id="resultTrees" class="font-semibold text-ranch-primary">0</span>
+                    </div>
+                    <div class="flex justify-between items-center text-gray-700">
+                        <span>Total Estimated Yield (kgs):</span>
+                        <span id="resultYield" class="font-semibold text-ranch-primary">0</span>
+                    </div>
+                    <div class="flex justify-between items-center text-lg bg-ranch-light p-2 rounded-lg">
+                        <span class="font-bold">Total Estimated Market Value:</span>
+                        <span id="resultTotalValue" class="font-extrabold text-ranch-primary">₹0</span>
+                    </div>
+                    <div class="bg-ranch-primary text-white p-3 rounded-lg shadow-md mt-4">
+                        <div class="flex justify-between items-center text-xl">
+                            <span class="font-bold">Your 50% Share (Potential Profit):</span>
+                            <span id="resultInvestorShare" class="font-extrabold text-ranch-accent">₹0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p id="roiError" class="mt-4 text-red-600 text-sm hidden">Please enter valid positive numbers for both fields.</p>
+
+        </div>
+    </div>
+
+    <!-- MODAL: DTCP APPROVAL INFO --><div id="approvalModal" class="fixed inset-0 bg-ranch-dark bg-opacity-80 backdrop-blur-sm hidden items-center justify-center z-[101] py-8 px-4">
+        <div class="bg-white rounded-xl shadow-2xl w-full max-w-lg p-6 sm:p-8 relative transform transition-all duration-300 scale-95 opacity-0 modal-content-box" id="approvalModalContent">
+            
+            <!-- Close Button --><button id="closeApprovalModal" class="absolute top-4 right-4 text-gray-600 hover:text-ranch-dark transition duration-200">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            
+            <h3 class="text-2xl font-bold text-ranch-primary mb-4 flex items-center">
+                <i data-lucide="info" class="w-6 h-6 mr-2"></i> Legal Assurance and Approval
+            </h3>
+
+            <div class="space-y-4 text-gray-700">
+                <p>The Go-Ranch Resorts project provides maximum security for your land investment by ensuring all plots are officially approved and recorded.</p>
+                
+                <ul class="list-disc list-inside space-y-2 pl-4">
+                    <li><strong class="text-ranch-dark">Approval Authority:</strong> DTCP (Directorate of Town and Country Planning, Telangana).</li>
+                    <li><strong class="text-ranch-dark">Layout Permit Number:</strong> <span class="font-mono bg-ranch-light p-1 rounded">L.P. 150/2019/W</span></li>
+                    <li><strong class="text-ranch-dark">Location Advantage:</strong> Strategic location near **Yadadri** and the upcoming **Regional Ring Road (RRR)** ensures high land value appreciation and connectivity.</li>
+                    <li><strong class="text-ranch-dark">USM Infra Commitment:</strong> Clear title, immediate registration, and fully developed site infrastructure (roads, electricity, water lines).</li>
+                </ul>
+            </div>
+            
+            <div class="mt-6 text-center">
+                <button id="closeApprovalModalBottom" class="px-8 py-3 bg-ranch-accent text-ranch-dark font-bold rounded-full shadow-lg hover:bg-yellow-400 transition duration-300 transform hover:scale-[1.01]">
+                    Understood
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- MODAL: PROFIT INFO --><div id="profitInfoModal" class="fixed inset-0 bg-ranch-dark bg-opacity-80 backdrop-blur-sm hidden items-center justify-center z-[102] py-8 px-4">
+        <div class="bg-white rounded-xl shadow-2xl w-full max-w-xl p-6 sm:p-8 relative transform transition-all duration-300 scale-95 opacity-0 modal-content-box" id="profitInfoModalContent">
+            
+            <!-- Close Button --><button id="closeProfitInfoModal" class="absolute top-4 right-4 text-gray-600 hover:text-ranch-dark transition duration-200">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            
+            <h3 class="text-2xl font-bold text-ranch-primary mb-4 flex items-center">
+                <i data-lucide="leaf" class="w-6 h-6 mr-2"></i> Sandalwood Wealth Generation & Security
+            </h3>
+
+            <div class="space-y-4 text-gray-700">
+                <p class="font-semibold">Your investment includes a full-cycle management plan to maximize your future returns:</p>
+                
+                <ul class="list-disc list-inside space-y-3 pl-4">
+                    <li><strong class="text-ranch-dark">Plantation Density:</strong> We plant and maintain **10 Sandalwood plants** for every 120 Sq Yard plot unit purchased.</li>
+                    <li><strong class="text-ranch-dark">Free Maintenance:</strong> All planting, weeding, watering, and scientific management by experts is provided at **no cost** to the owner for **15 years**.</li>
+                    <li><strong class="text-ranch-dark">Profit Sharing:</strong> After the collective harvest and sales process, the net profit is split **50-50** between the plot owner and the company.</li>
+                    <li><strong class="text-ranch-dark">Anti-Theft Security:</strong> Every sandalwood tree is tagged with a **GPS-enabled chip**. If tampered with or moved, an instant alert is sent to our on-site security team.</li>
+                </ul>
+                <p class="pt-2 text-sm italic">Use the "Open ROI Calculator" button below to estimate your potential profit in 15 years.</p>
+            </div>
+            
+            <div class="mt-6 text-center">
+                <!-- This button closes this modal and opens the ROI modal --><button id="openRoiModalFromProfitInfo" class="px-8 py-3 bg-ranch-accent text-ranch-dark font-bold rounded-full shadow-lg hover:bg-yellow-400 transition duration-300 transform hover:scale-[1.01]">
+                    Open ROI Calculator
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL: AMENITIES --><div id="amenitiesModal" class="fixed inset-0 bg-ranch-dark bg-opacity-80 backdrop-blur-sm hidden items-center justify-center z-[103] py-8 px-4">
+        <div class="bg-white rounded-xl shadow-2xl w-full max-w-xl p-6 sm:p-8 relative transform transition-all duration-300 scale-95 opacity-0 modal-content-box" id="amenitiesModalContent">
+            
+            <!-- Close Button --><button id="closeAmenitiesModal" class="absolute top-4 right-4 text-gray-600 hover:text-ranch-dark transition duration-200">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            
+            <h3 class="text-2xl font-bold text-ranch-primary mb-4 flex items-center">
+                <i data-lucide="aperture" class="w-6 h-6 mr-2"></i> World-Class Resort Amenities
+            </h3>
+
+            <div class="space-y-4 text-gray-700">
+                <p class="font-semibold">Your FREE Resort Membership provides immediate access to the following 15+ facilities on the 450+ Acre property:</p>
+                
+                <div class="grid grid-cols-2 gap-3 text-sm">
+                    <ul class="list-disc list-inside space-y-2 pl-4">
+                        <li>Beach Style Swimming Pool</li>
+                        <li>Rain Dance Floor</li>
+                        <li>Indoor & Outdoor Games</li>
+                        <li>Cycling Tracks (Bicycles available)</li>
+                        <li>Miniature Golf Course</li>
+                        <li>Pickleball & Shuttle Courts</li>
+                    </ul>
+                    <ul class="list-disc list-inside space-y-2 pl-4">
+                        <li>Volleyball/Sand Volleyball</li>
+                        <li>Box Cricket Nets</li>
+                        <li>Kids Play Area</li>
+                        <li>Bonfire & Relaxation Zones</li>
+                        <li>Locker & Shower Facilities</li>
+                        <li>AC Relaxing Rooms (Nominal charge)</li>
+                    </ul>
+                </div>
+                <p class="pt-2 text-sm italic text-ranch-dark font-medium">This membership is free for all plot owners and remains valid for the duration of the project.</p>
+            </div>
+            
+            <div class="mt-6 text-center">
+                <button id="closeAmenitiesModalBottom" class="px-8 py-3 bg-ranch-accent text-ranch-dark font-bold rounded-full shadow-lg hover:bg-yellow-400 transition duration-300 transform hover:scale-[1.01]">
+                    Plan a Visit
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Render Lucide icons and add JavaScript for the calculator and modals --><script>
+        lucide.createIcons();
+
+        // --- Helper Functions for ALL Modals ---
+        const setupModal = (modalId, contentId, openBtnId, closeBtnIds) => {
+            const modal = document.getElementById(modalId);
+            const content = document.getElementById(contentId);
+            // Handle multiple potential open buttons
+            const openBtns = Array.isArray(openBtnId)
+                ? openBtnId.map(id => document.getElementById(id)).filter(Boolean)
+                : [document.getElementById(openBtnId)].filter(Boolean);
+            
+            // Convert single ID or array of IDs to an array of elements
+            const closeBtns = Array.isArray(closeBtnIds) 
+                ? closeBtnIds.map(id => document.getElementById(id)).filter(Boolean)
+                : [document.getElementById(closeBtnIds)].filter(Boolean);
+
+            const openModal = () => {
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                setTimeout(() => {
+                    content.classList.remove('opacity-0', 'scale-95');
+                    content.classList.add('opacity-100', 'scale-100');
+                }, 10);
+            };
+
+            const closeModal = () => {
+                content.classList.remove('opacity-100', 'scale-100');
+                content.classList.add('opacity-0', 'scale-95');
+                setTimeout(() => {
+                    modal.classList.remove('flex');
+                    modal.classList.add('hidden');
+                }, 300); // Wait for the transition duration
+            };
+
+            openBtns.forEach(btn => btn.addEventListener('click', openModal));
+            closeBtns.forEach(btn => btn.addEventListener('click', closeModal));
+            
+            // Close when clicking outside the content box
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    closeModal();
+                }
+            });
+
+            return { open: openModal, close: closeModal }; // Return controls for specific transitions
+        };
+
+        // --- ROI Calculator Logic ---
+        const calculateRoi = () => {
+            const plotUnitsInput = document.getElementById('plotUnits');
+            const futurePriceInput = document.getElementById('futurePrice');
+            const resultsDiv = document.getElementById('roiResults');
+            const errorDiv = document.getElementById('roiError');
+            
+            // Parse inputs (using parseFloat to allow for future flexibility, though integer input is used)
+            const units = parseInt(plotUnitsInput.value);
+            const price = parseInt(futurePriceInput.value);
+
+            // Basic validation
+            if (isNaN(units) || units <= 0 || isNaN(price) || price < 1000) {
+                resultsDiv.classList.add('hidden');
+                errorDiv.classList.remove('hidden');
+                return;
+            }
+
+            errorDiv.classList.add('hidden');
+            resultsDiv.classList.remove('hidden');
+
+            // Investment Constants (as per the landing page text)
+            const TREES_PER_UNIT = 10;
+            const YIELD_PER_TREE_KG = 25;
+
+            // Calculations
+            const totalTrees = units * TREES_PER_UNIT;
+            const totalYieldKg = totalTrees * YIELD_PER_TREE_KG; // Total wood yield
+            const totalMarketValue = totalYieldKg * price; // Total projected revenue
+            const investorShare = totalMarketValue * 0.50; // 50% profit share
+
+            // Currency Formatter (Indian Rupees - INR)
+            const currencyFormatter = new Intl.NumberFormat('en-IN', {
+                style: 'currency',
+                currency: 'INR',
+                maximumFractionDigits: 0,
+            });
+
+            // Update UI
+            document.getElementById('resultTrees').textContent = totalTrees.toLocaleString();
+            document.getElementById('resultYield').textContent = totalYieldKg.toLocaleString();
+            document.getElementById('resultTotalValue').textContent = currencyFormatter.format(totalMarketValue);
+            document.getElementById('resultInvestorShare').textContent = currencyFormatter.format(investorShare);
+        };
+
+        // --- Modal Initialization ---
+        
+        // Setup Modals and capture controls
+        const roiModalControls = setupModal('roiModal', 'roiModalContent', 'openRoiModal', ['closeRoiModal']);
+        const approvalModalControls = setupModal('approvalModal', 'approvalModalContent', 'openApprovalModal', ['closeApprovalModal', 'closeApprovalModalBottom']);
+        // The bottom link is now a direct link, so we only need to listen to the pillar button (openAmenitiesModal)
+        const profitInfoModalControls = setupModal('profitInfoModal', 'profitInfoModalContent', 'openProfitInfoModal', ['closeProfitInfoModal']);
+        const amenitiesModalControls = setupModal('amenitiesModal', 'amenitiesModalContent', 'openAmenitiesModal', ['closeAmenitiesModal', 'closeAmenitiesModalBottom']);
+
+        // Attach special button listeners for complex flow
+        
+        // 1. Close Profit Info and Open ROI: This button is inside the Profit Info modal.
+        document.getElementById('openRoiModalFromProfitInfo').addEventListener('click', () => {
+            // Close the current modal (Profit Info)
+            profitInfoModalControls.close();
+            // Wait for the close transition (300ms) and then open the ROI modal
+            setTimeout(() => {
+                 roiModalControls.open();
+                 // Run calculation immediately after opening for initial data display
+                 calculateRoi();
+            }, 300); 
+        });
+
+        // 2. Attach ROI Calculator logic to the calculate button
+        document.getElementById('calculateRoi').addEventListener('click', calculateRoi);
+
+        // Run an initial calculation so the default values are populated when the user first opens the ROI modal.
+        document.getElementById('roiModal').addEventListener('click', () => {
+             // Calculate on modal open, but only once its shown (handled implicitly by the controls)
+             // For simplicity, we run the calculation when the calculate button is pressed, or when transitioning from the other modal.
+        });
+
+    </script>
+</body>
+</html>

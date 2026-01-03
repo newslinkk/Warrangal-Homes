@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Site Visit | Go-Ranch DTCP Plots & Resort</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Custom Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'ranch-primary': '#004d40', // Deep Forest Green/Teal
+                        'ranch-accent': '#FFC107', // Gold/Amber
+                        'ranch-hinglish': '#d97706', // Deeper Amber for text contrast
+                        'ranch-light': '#E0F2F1',
+                        'ranch-dark': '#00251A',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        input, select, textarea {
+            transition: all 0.2s ease-in-out;
+        }
+        .hinglish-text {
+            color: #d97706; /* ranch-hinglish */
+            font-size: 0.875rem;
+            font-weight: 500;
+            display: block;
+            margin-top: 2px;
+        }
+        .hinglish-text-light {
+            color: #FFD54F; /* Light Amber for dark backgrounds */
+            font-size: 0.875rem;
+            display: block;
+        }
+    </style>
+</head>
+<body class="font-sans bg-ranch-light text-ranch-dark min-h-screen flex flex-col">
+
+    <!-- HEADER & NAVIGATION -->
+    <header class="sticky top-0 z-50 bg-ranch-dark shadow-lg">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <div class="logo text-2xl font-extrabold text-ranch-accent tracking-wider flex items-center">
+                <i data-lucide="sprout" class="w-8 h-8 mr-2 text-ranch-accent"></i> 
+                <div>
+                    <span>Go-Ranch</span>
+                </div>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="https://drive.google.com/file/d/1xmmcOVueFoJC3yAYpxIBIPr8xv0ueQ1Y/view?usp=sharing" target="_blank" class="px-4 py-2 bg-ranch-accent text-ranch-dark font-semibold rounded-full hover:bg-yellow-400 transition duration-300 shadow-md text-sm sm:text-base text-center leading-tight">
+                    View DTCP Layout<br>
+                    <span class="text-[10px] uppercase">Layout Dekhein</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- MAIN CONTENT - BOOKING FORM -->
+    <main class="flex-grow py-8 sm:py-12">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-xl">
+            
+            <!-- Headline Card -->
+            <div class="bg-ranch-primary text-white p-6 sm:p-8 rounded-t-2xl shadow-2xl text-center border-b border-white/10">
+                <div class="inline-flex items-center justify-center p-3 bg-ranch-dark/30 rounded-full mb-4">
+                    <i data-lucide="calendar-check" class="w-10 h-10 text-ranch-accent"></i>
+                </div>
+                <h1 class="text-3xl sm:text-4xl font-extrabold text-ranch-accent mb-2">
+                    Book Site Visit
+                </h1>
+                <span class="hinglish-text-light font-bold text-lg mb-4 italic">Apna Site Visit Book Karein</span>
+                
+                <p class="text-lg text-ranch-light font-medium mt-4">
+                    Invest where your future grows.
+                    <span class="hinglish-text-light">Wahan invest karein jahan bhavishya badhe.</span>
+                </p>
+                <p class="text-ranch-accent font-bold mt-2">
+                    Visits scheduled Every Sunday.
+                    <span class="text-white text-sm block">Har Sunday ko visits hote hain.</span>
+                </p>
+            </div>
+            
+            <!-- Booking Form integrated with Web3Forms -->
+            <form id="bookingForm" action="https://api.web3forms.com/submit" method="POST" class="bg-white p-6 sm:p-8 rounded-b-2xl shadow-xl space-y-6 border-b-8 border-ranch-accent">
+                
+                <!-- Web3Forms Configuration -->
+                <input type="hidden" name="access_key" value="363c16d0-baa5-48b2-8c63-a7a8a59a7c61">
+                <input type="hidden" name="subject" value="New Site Visit Request - Go-Ranch">
+                <input type="hidden" name="from_name" value="Go-Ranch Booking Bot">
+                <!-- Redirection after submission -->
+                <input type="hidden" name="redirect" value="https://www.warrangal-highway.homes/">
+                <!-- Honeypot for Spam protection -->
+                <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+                
+                <!-- Personal Details Block -->
+                <div class="space-y-4">
+                    <h2 class="text-xl font-bold text-ranch-primary border-b border-gray-100 pb-2 flex items-center">
+                        <i data-lucide="user" class="w-5 h-5 mr-2"></i> 
+                        <div>
+                            Your Details
+                            <span class="hinglish-text">Aapki Jaankari</span>
+                        </div>
+                    </h2>
+                    
+                    <div>
+                        <label for="name" class="block text-sm font-semibold text-gray-700">
+                            Full Name
+                            <span class="hinglish-text text-xs">Poora Naam</span>
+                        </label>
+                        <input type="text" id="name" name="name" placeholder="John Doe" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:border-ranch-primary focus:ring-2 focus:ring-ranch-primary outline-none">
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label for="mobile" class="block text-sm font-semibold text-gray-700">
+                                Mobile Number
+                                <span class="hinglish-text text-xs">Mobile No.</span>
+                            </label>
+                            <input type="tel" id="mobile" name="mobile" placeholder="9876543210" required pattern="[0-9]{10}" title="Mobile number must be 10 digits" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:border-ranch-primary focus:ring-2 focus:ring-ranch-primary outline-none">
+                        </div>
+                        <div>
+                            <label for="age" class="block text-sm font-semibold text-gray-700">
+                                Age
+                                <span class="hinglish-text text-xs">Umra</span>
+                            </label>
+                            <input type="number" id="age" name="age" required min="18" max="100" placeholder="25" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:border-ranch-primary focus:ring-2 focus:ring-ranch-primary outline-none">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="profession" class="block text-sm font-semibold text-gray-700">
+                            Profession/Occupation
+                            <span class="hinglish-text text-xs">Aapka Kaam</span>
+                        </label>
+                        <input type="text" id="profession" name="profession" placeholder="Job ya Business" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:border-ranch-primary focus:ring-2 focus:ring-ranch-primary outline-none">
+                    </div>
+                </div>
+
+                <!-- Project Selection Block -->
+                <div class="space-y-4 pt-4">
+                    <h2 class="text-xl font-bold text-ranch-primary border-b border-gray-100 pb-2 flex items-center">
+                        <i data-lucide="map" class="w-5 h-5 mr-2"></i> 
+                        <div>
+                            Project Interest
+                            <span class="hinglish-text">Kaunsa Project Dekhna Hai?</span>
+                        </div>
+                    </h2>
+                    <div>
+                        <label for="project" class="block text-sm font-semibold text-gray-700">
+                            Select Project to Visit
+                            <span class="hinglish-text text-xs">Project chunein</span>
+                        </label>
+                        <select id="project" name="Project_Interest" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:border-ranch-primary focus:ring-2 focus:ring-ranch-primary outline-none bg-white">
+                            <option value="" disabled selected>Choose a project / Project Select Karein</option>
+                            <option value="Go-Ranch">Go-Ranch</option>
+                            <option value="Go-Valley">Go-Valley</option>
+                            <option value="Nature Bliss">Nature Bliss</option>
+                            <option value="Rush Green">Rush Green</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Visit Details Block -->
+                <div class="space-y-4 pt-4">
+                    <h2 class="text-xl font-bold text-ranch-primary border-b border-gray-100 pb-2 flex items-center">
+                        <i data-lucide="clock" class="w-5 h-5 mr-2"></i> 
+                        <div>
+                            Visit Schedule
+                            <span class="hinglish-text">Visit ka Samay</span>
+                        </div>
+                    </h2>
+                    
+                    <div class="bg-ranch-light p-4 rounded-xl text-sm text-ranch-dark font-medium flex items-start border border-ranch-primary/10">
+                        <i data-lucide="info" class="w-5 h-5 mr-3 text-ranch-primary shrink-0 mt-0.5"></i> 
+                        <div>
+                            <p>Site visits are conducted exclusively on <span class="font-bold underline">Sundays</span>.</p>
+                            <p class="hinglish-text text-ranch-primary mt-1">Site visits sirf <span class="font-bold">Sunday</span> ko hote hain. Hum pick-up ki suvidha bhi dete hain.</p>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label for="visitDate" class="block text-sm font-semibold text-gray-700">
+                            Select Sunday Date
+                            <span class="hinglish-text text-xs">Sunday ki Tareekh Chunein</span>
+                        </label>
+                        <input type="date" id="visitDate" name="Preferred_Date" required 
+                               class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:border-ranch-primary focus:ring-2 focus:ring-ranch-primary outline-none">
+                        <p id="dateFeedback" class="text-xs mt-1.5 text-red-600 font-medium hidden flex items-center">
+                             <i data-lucide="alert-circle" class="w-3.5 h-3.5 mr-1"></i> 
+                             <span>Please select a Sunday. / Kripya Sunday chunein.</span>
+                        </p>
+                    </div>
+
+                    <div>
+                        <label for="visitTime" class="block text-sm font-semibold text-gray-700">
+                            Preferred Time Slot
+                            <span class="hinglish-text text-xs">Pasandida Samay</span>
+                        </label>
+                        <select id="visitTime" name="Preferred_Time" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:border-ranch-primary focus:ring-2 focus:ring-ranch-primary outline-none bg-white">
+                            <option value="" disabled selected>Select time / Samay chunein</option>
+                            <option value="09:00 AM">Morning / Subah (09:00 AM)</option>
+                            <option value="10:00 AM">Morning / Subah (10:00 AM)</option>
+                            <option value="11:00 AM">Late Morning / Dopahar Se Pehle (11:00 AM)</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="message" class="block text-sm font-semibold text-gray-700">
+                            How did you hear about us?
+                            <span class="hinglish-text text-xs">Aapne hamare baare mein kahan suna?</span>
+                        </label>
+                        <textarea id="message" name="Marketing_Source" rows="2" placeholder="Facebook, Friend, Newspaper..." class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:border-ranch-primary focus:ring-2 focus:ring-ranch-primary outline-none"></textarea>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" id="submitButton" class="w-full flex flex-col justify-center items-center py-4 px-4 border border-transparent rounded-xl shadow-lg text-lg font-bold text-ranch-dark bg-ranch-accent hover:bg-yellow-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ranch-accent transition duration-300 transform hover:scale-[1.02] active:scale-95">
+                    <div class="flex items-center">
+                        <i data-lucide="map-pin" class="w-6 h-6 mr-2"></i> 
+                        Confirm Sunday Site Visit
+                    </div>
+                    <span class="text-xs font-medium uppercase mt-1 opacity-80 underline decoration-ranch-dark/20">Sunday Visit Confirm Karein</span>
+                </button>
+                
+                <div class="text-center space-y-1">
+                    <p class="text-xs text-gray-500 italic">By clicking confirm, you agree to receive a call from our coordinators.</p>
+                    <p class="text-[10px] text-ranch-hinglish font-medium">Confirm karne par hamare coordinators aapko call karenge.</p>
+                </div>
+            </form>
+            
+            <!-- Call to Action Footer -->
+            <div class="mt-8 p-6 bg-white rounded-2xl shadow-lg border-l-8 border-ranch-primary flex flex-col sm:flex-row items-center justify-between">
+                <div class="text-center sm:text-left">
+                    <h3 class="text-lg font-bold text-ranch-primary leading-tight">
+                        Need Immediate Assistance?
+                        <span class="block hinglish-text">Turant madad chahiye?</span>
+                    </h3>
+                    <p class="text-sm text-gray-600 mt-1">Call our sales team for pricing & documentation.</p>
+                </div>
+                <a href="https://www.warrangal-highway.homes/home/contact-sales" class="mt-4 sm:mt-0 inline-flex flex-col items-center px-6 py-2 bg-ranch-primary text-white rounded-lg hover:bg-ranch-dark transition duration-200 shadow-md">
+                    <span class="font-semibold flex items-center">Contact Us <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i></span>
+                    <span class="text-[10px] opacity-80">Hamein Call Karein</span>
+                </a>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-ranch-dark text-white py-12 mt-auto">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="flex flex-wrap justify-center gap-4 mb-6 text-sm">
+                <a href="https://www.warrangal-highway.homes/terms-conditions" class="hover:text-ranch-accent transition duration-200 underline underline-offset-4 decoration-white/20">Terms & Conditions</a>
+                <span class="text-gray-600">|</span>
+                <a href="https://www.warrangal-highway.homes/privacy-policy" class="hover:text-ranch-accent transition duration-200 underline underline-offset-4 decoration-white/20">Privacy Policy</a>
+                <span class="text-gray-600">|</span>
+                <a href="https://www.warrangal-highway.homes/disclaimer" class="hover:text-ranch-accent transition duration-200 underline underline-offset-4 decoration-white/20">Disclaimer</a>
+            </div>
+            
+            <div class="space-y-4 opacity-90">
+                <p class="text-sm">
+                    &copy; 2025 Go-Ranch Resorts | A Project by USM Infra.
+                    <span class="block text-ranch-accent/60 text-[10px] mt-1">USM Infra ka ek bharosemand project.</span>
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 pt-2">
+                    <div class="text-center">
+                        <p class="text-xs font-medium text-gray-400 uppercase tracking-tighter mb-1">Approval Number</p>
+                        <p class="text-sm font-bold text-ranch-accent border border-ranch-accent/30 px-3 py-1 rounded">DTCP: T.L.P.NO. 58/2025/W</p>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-xs font-medium text-gray-400 uppercase tracking-tighter mb-1">Registration</p>
+                        <p class="text-sm font-bold text-ranch-accent border border-ranch-accent/30 px-3 py-1 rounded">RERA: P00600001873</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        const visitDateInput = document.getElementById('visitDate');
+        const dateFeedback = document.getElementById('dateFeedback');
+
+        // Set minimum date to today
+        const today = new Date().toISOString().split('T')[0];
+        visitDateInput.setAttribute('min', today);
+
+        function isSunday(dateString) {
+            const date = new Date(dateString + 'T00:00:00'); 
+            return !isNaN(date) && date.getDay() === 0;
+        }
+
+        visitDateInput.addEventListener('change', () => {
+            const selectedDate = visitDateInput.value;
+            if (selectedDate && !isSunday(selectedDate)) {
+                dateFeedback.classList.remove('hidden');
+                visitDateInput.setCustomValidity('Must be a Sunday');
+                visitDateInput.classList.add('border-red-500', 'ring-red-100');
+            } else {
+                dateFeedback.classList.add('hidden');
+                visitDateInput.setCustomValidity(''); 
+                visitDateInput.classList.remove('border-red-500', 'ring-red-100');
+            }
+            visitDateInput.reportValidity();
+        });
+
+        window.onload = () => {
+             lucide.createIcons();
+        };
+    </script>
+</body>
+</html>
